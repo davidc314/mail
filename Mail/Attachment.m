@@ -10,7 +10,7 @@
 
 @implementation Attachment
 
-- (id) initWithName:(NSString *)name ext:(NSString *)ext size:(UInt64)size {
+- (id) initWithName:(NSString *)name ext:(NSString *)ext size:(UInt64)size data:(NSData *)data{
     self = [super init];
     _name = name;
     _ext = [ext uppercaseString];
@@ -20,6 +20,7 @@
     }
     _size = size;
     _icon = [[NSWorkspace sharedWorkspace] iconForFileType:ext];
+    _data = data;
     
     return self;
 }

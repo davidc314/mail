@@ -110,7 +110,7 @@
             NSData *data = [attachment data];
             NSURL *fileURL = [NSURL URLWithString:[attachment filename]];
             NSString *fileName = [fileURL lastPathComponent];
-            Attachment *newAttachment = [[Attachment alloc] initWithName:fileName ext:[fileURL pathExtension]  size:[data length]];
+            Attachment *newAttachment = [[Attachment alloc] initWithName:fileName ext:[fileURL pathExtension]  size:[data length] data:attachment.data];
             [self.attachments addObject:newAttachment];
         }
         

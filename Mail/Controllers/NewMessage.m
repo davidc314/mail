@@ -43,7 +43,7 @@
         NSDictionary *attrs = [man attributesOfItemAtPath: [url path] error: NULL];
         NSString *fileName = [[url lastPathComponent] stringByDeletingPathExtension];
         
-        Attachment *attachment = [[Attachment alloc] initWithName:fileName ext:[url pathExtension] size:[attrs fileSize]];
+        Attachment *attachment = [[Attachment alloc] initWithName:fileName ext:[url pathExtension] size:[attrs fileSize] data:nil];
         
         self.attachments = [[self.attachments arrayByAddingObject:attachment] mutableCopy];
     };

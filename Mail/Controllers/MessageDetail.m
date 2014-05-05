@@ -7,6 +7,7 @@
 //
 
 #import "MessageDetail.h"
+#import "Attachment.h"
 
 @implementation MessageDetail
 
@@ -53,7 +54,32 @@
 }
 
 - (IBAction)openAttachment:(id)sender {
-    NSLog(@"Open %@",[[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]]);
+    
+    for (Attachment* attachment in [[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]]) {
+        NSString *tempFileTemplate =
+        [NSTemporaryDirectory() stringByAppendingPathComponent:@"mail.XXXXXX"];
+        const char *tempFileTemplateCString =
+        [tempFileTemplate fileSystemRepresentation];
+        char *tempFileNameCString = (char *)malloc(strlen(tempFileTemplateCString) + 1);
+        strcpy(tempFileNameCString, tempFileTemplateCString);
+        int fileDescriptor = mkstemp(tempFileNameCString);
+        
+        if (fileDescriptor == -1) {
+            NSLog(@"Error writing file");
+        }
+        
+        free(tempFileNameCString);
+        
+        NSFileHandle *tempFileHandle =
+        [[NSFileHandle alloc]
+         initWithFileDescriptor:fileDescriptor
+         closeOnDealloc:NO];
+        
+        //[tempFileHandle writeData:attachment.data];
+        
+        NSLog(@"URL : %s",tempFileNameCString);
+    }
+
 }
 - (IBAction)saveAttachment:(id)sender {
 }
