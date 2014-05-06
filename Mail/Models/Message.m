@@ -102,15 +102,13 @@
             NSArray *parts = [(MCOAbstractMultipart *)[msg mainPart] parts];
             
             for (MCOAbstractPart *part in parts) {
-                NSLog(@"Part type : %@",[part mimeType]);
+                //NSLog(@"Part type : %@",[part mimeType]);
             }
         }
         
         for (MCOAttachment *attachment in [msg attachments]) {
             NSData *data = [attachment data];
-            NSURL *fileURL = [NSURL URLWithString:[attachment filename]];
-            NSString *fileName = [fileURL lastPathComponent];
-            Attachment *newAttachment = [[Attachment alloc] initWithName:fileName ext:[fileURL pathExtension]  size:[data length] data:attachment.data];
+            Attachment *newAttachment = [[Attachment alloc] initWithName:[attachment filename] size:[data length] data:attachment.data];
             [self.attachments addObject:newAttachment];
         }
         

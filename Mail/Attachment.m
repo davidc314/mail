@@ -10,16 +10,13 @@
 
 @implementation Attachment
 
-- (id) initWithName:(NSString *)name ext:(NSString *)ext size:(UInt64)size data:(NSData *)data{
+- (id) initWithName:(NSString *)name size:(UInt64)size data:(NSData *)data{
     self = [super init];
-    _name = name;
-    _ext = [ext uppercaseString];
     
-    if (_ext.length > 4) {
-        _ext = [_ext substringToIndex:4];
-    }
+    _name = name;
     _size = size;
-    _icon = [[NSWorkspace sharedWorkspace] iconForFileType:ext];
+    _ext = [[name componentsSeparatedByString:@"."] lastObject];
+    _icon = [[NSWorkspace sharedWorkspace] iconForFileType:_ext];
     _data = data;
     
     return self;

@@ -63,7 +63,11 @@
                 <menuItem title="Message" id="OCw-zG-7vB">
                     <menu key="submenu" title="Message" id="BCf-SV-rNz">
                         <items>
-                            <menuItem title="New" keyEquivalent="n" id="q6X-ll-As4"/>
+                            <menuItem title="New" keyEquivalent="n" id="q6X-ll-As4">
+                                <connections>
+                                    <action selector="newMessage:" target="494" id="FxG-KR-p2x"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Open…" keyEquivalent="o" id="RbP-ua-3tA"/>
                             <menuItem title="Open Recent" id="ubg-SL-Srj">
                                 <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="KzJ-0a-6Xr">

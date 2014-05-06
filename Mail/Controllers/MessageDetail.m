@@ -34,8 +34,6 @@
 
 - (void) rightClicked:(id)sender event:(NSEvent *)event
 {
-    NSLog(@"Right clicked on attachment %@",sender);
-    
     // Multiple selection
     if (self.attachmentCollectionView.selectionIndexes.count > 1) {
         
@@ -55,29 +53,45 @@
 
 - (IBAction)openAttachment:(id)sender {
     
-    for (Attachment* attachment in [[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]]) {
-        NSString *tempFileTemplate =
-        [NSTemporaryDirectory() stringByAppendingPathComponent:@"mail.XXXXXX"];
-        const char *tempFileTemplateCString =
-        [tempFileTemplate fileSystemRepresentation];
+    for (Attachment *attachment in [[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]]) {
+
+        NSString *tempFileName = [NSTemporaryDirectory() stringByAppendingPathComponent:attachment.name];
+        
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        
+        if([fileManager fileExistsAtPath:tempFileName]) {
+            NSLog(@"File exist");
+            [fileManager removeItemAtPath:tempFileName error:NULL];
+            //[[NSWorkspace sharedWorkspace]openFile:[NSString stringWithFormat:@"%@", tempFileName]];
+        }
+       
+        const char *tempFileTemplateCString = [tempFileName fileSystemRepresentation];
+        
         char *tempFileNameCString = (char *)malloc(strlen(tempFileTemplateCString) + 1);
         strcpy(tempFileNameCString, tempFileTemplateCString);
+        
         int fileDescriptor = mkstemp(tempFileNameCString);
         
         if (fileDescriptor == -1) {
             NSLog(@"Error writing file");
         }
         
-        free(tempFileNameCString);
         
         NSFileHandle *tempFileHandle =
         [[NSFileHandle alloc]
          initWithFileDescriptor:fileDescriptor
          closeOnDealloc:NO];
         
-        //[tempFileHandle writeData:attachment.data];
+        // Write data into created temp file
+        [tempFileHandle writeData:attachment.data];
         
-        NSLog(@"URL : %s",tempFileNameCString);
+        // Open file with default application
+        [[NSWorkspace sharedWorkspace]openFile:[NSString stringWithFormat:@"%s", tempFileNameCString]];
+        
+        // Free memory of tempFileNameCSString
+        free(tempFileNameCString);
+
+        
     }
 
 }

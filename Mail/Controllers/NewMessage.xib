@@ -244,9 +244,9 @@
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                             <connections>
-                                <binding destination="PR9-xm-KUl" name="value" keyPath="representedObject.size" id="y3C-8x-Vuo">
+                                <binding destination="PR9-xm-KUl" name="value" keyPath="representedObject.size" id="eyH-xX-wKp">
                                     <dictionary key="options">
-                                        <string key="NSValueTransformerName">fileSizeTransformer</string>
+                                        <string key="NSValueTransformerName">FileSizeTransformer</string>
                                     </dictionary>
                                 </binding>
                             </connections>
@@ -322,6 +322,6 @@
     </objects>
     <resources>
         <image name="NSStopProgressTemplate" width="11" height="11"/>
-        <image name="attachment" width="128" height="128"/>
+        <image name="attachment" width="12" height="12"/>
     </resources>
 </document>

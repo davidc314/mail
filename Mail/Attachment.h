@@ -14,7 +14,7 @@
 @property (strong) NSString *ext;
 @property (assign) UInt64 size;
 @property (assign) NSImage *icon;
-@property (assign) NSData *data;
+@property (strong) NSData *data;
 
-- (id) initWithName:(NSString *)name ext:(NSString *)ext size:(UInt64)size data:(NSData *)data;
+- (id) initWithName:(NSString *)name size:(UInt64)size data:(NSData *)data;
 @end
