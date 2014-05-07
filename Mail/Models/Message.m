@@ -10,7 +10,7 @@
 #import "Attachment.h"
 
 @implementation Message
-    
+
 - (id) init {
     self = [super init];
     _from = @"test";
@@ -19,6 +19,23 @@
     
     return self;
 }
+
+/*!
+ Initialise un nouveau message à envoyé
+ 
+ @param to 
+    Le ou les destinataires
+ @param cc 
+    Le ou les destinataires des copies
+ @param bcc
+    Le ou les destinataires des copies cachées
+ @param subject
+    Le sujet
+ @param body
+    Le contenu du message
+ 
+ @return Le message prêt à être envoyé
+ */
 -  (id)initBuildMessageWithTo: (NSArray *)to CC:(NSArray *)cc BCC:(NSArray *)bcc Subject:(NSString *)subject Body:(NSString *)body{
     self = [super init];
     _to = to;
@@ -28,6 +45,15 @@
     _htmlBody = body;
     return self;
 }
+
+/*!
+ Initialise un nouveau message à partir du modèle de la librairie
+ 
+ @param msg
+    Modèle de message de la librairie
+ 
+ @return Un message
+ */
 - (id)initWithMCOIMAPMessage:(MCOIMAPMessage *)msg {
     self = [super init];
     
@@ -71,7 +97,7 @@
 }
 
 
-//Get message body
+
 - (void)fetchBodyForFolder:(Folder *)folder account:(Account *)account completion:(void (^)(NSString *, NSMutableArray *))handler {
     MCOIMAPFetchContentOperation *fetchContentOperation = [account.imapSession fetchMessageByUIDOperationWithFolder:folder.name uid:(int)self.uid];
     

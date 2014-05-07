@@ -12,6 +12,10 @@
 #import "Account.h"
 #import "Folder.h"
 
+/*!
+ @class Message
+ @discussion Modèle representant un message
+ */
 @interface Message : NSObject
 
 @property (assign) MCOMessageFlag flags;
@@ -31,6 +35,14 @@
 @property (assign) BOOL forwarded;
 @property (assign, nonatomic) BOOL unread;
 
+/*!
+ Récupère et parse le contenu du message
+ 
+ @param folder
+ Le dossier dans lequel se trouve le message
+ @param account
+ Le compte associé au message
+ */
 - (void)fetchBodyForFolder:(Folder *)folder account:(Account *)account completion:(void (^)(NSString *, NSMutableArray *))handler;
 
 - (id)initWithMCOIMAPMessage:(MCOIMAPMessage *)msg;
