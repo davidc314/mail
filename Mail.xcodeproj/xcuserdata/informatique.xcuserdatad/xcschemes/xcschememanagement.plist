@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Documentatin.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Documentation.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Mail.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +22,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>7347C6CD191BA26900F21F09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7347C6D6191BA27A00F21F09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>736094101896744D00E664B4</key>
 		<dict>
 			<key>primary</key>

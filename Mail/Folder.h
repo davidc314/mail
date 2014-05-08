@@ -11,20 +11,36 @@
 
 @class Account;
 
-
+/** Modèle representant un dossier */
 @interface Folder : NSObject
 
+/** Nom à afficher */
 @property (strong) NSString *label;
+
+/** Chemin */
 @property (strong) NSString *name;
-@property (assign) NSUInteger indent;
+
+/** Type */
 @property (nonatomic,assign) MCOIMAPFolderFlag flags;
 
+/** Messages */
 @property (strong) NSMutableArray *messages;
+
+/** Dossiers */
 @property (strong) NSMutableArray *folders;
 
+/** Nombre de message non-lus */
 @property (assign) NSUInteger nbUnread;
 
+/** Initialisation d'un dossier 
+ @param name Chemin
+ @param flags Type
+ */
 - (id) initWithName:(NSString *)name flags:(MCOIMAPFolderFlag) flags;
+
+/** Récupération de l'entêtes des messages contenu dans le dossier
+ @param account Compte
+ */
 - (void)fetchMessagesHeadersForAccount:(Account *)account;
 
 @end

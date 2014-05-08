@@ -11,7 +11,8 @@
 
 @implementation Message
 
-- (id) init {
+- (id) init
+{
     self = [super init];
     _from = @"test";
     _subject = @"test";
@@ -20,23 +21,9 @@
     return self;
 }
 
-/*!
- Initialise un nouveau message à envoyé
- 
- @param to 
-    Le ou les destinataires
- @param cc 
-    Le ou les destinataires des copies
- @param bcc
-    Le ou les destinataires des copies cachées
- @param subject
-    Le sujet
- @param body
-    Le contenu du message
- 
- @return Le message prêt à être envoyé
- */
--  (id)initBuildMessageWithTo: (NSArray *)to CC:(NSArray *)cc BCC:(NSArray *)bcc Subject:(NSString *)subject Body:(NSString *)body{
+
+-  (id)initBuildMessageWithTo: (NSArray *)to CC:(NSArray *)cc BCC:(NSArray *)bcc Subject:(NSString *)subject Body:(NSString *)body
+{
     self = [super init];
     _to = to;
     _bcc = bcc;
@@ -46,15 +33,8 @@
     return self;
 }
 
-/*!
- Initialise un nouveau message à partir du modèle de la librairie
- 
- @param msg
-    Modèle de message de la librairie
- 
- @return Un message
- */
-- (id)initWithMCOIMAPMessage:(MCOIMAPMessage *)msg {
+- (id)initWithMCOIMAPMessage:(MCOIMAPMessage *)msg
+{
     self = [super init];
     
     MCOMessageHeader *header = [msg header];
@@ -98,7 +78,8 @@
 
 
 
-- (void)fetchBodyForFolder:(Folder *)folder account:(Account *)account completion:(void (^)(NSString *, NSMutableArray *))handler {
+- (void)fetchBodyForFolder:(Folder *)folder account:(Account *)account completion:(void (^)(NSString *, NSMutableArray *))handler
+{
     MCOIMAPFetchContentOperation *fetchContentOperation = [account.imapSession fetchMessageByUIDOperationWithFolder:folder.name uid:(int)self.uid];
     
     
@@ -166,7 +147,8 @@
     }];
 }
  */
-- (NSString *) description {
+- (NSString *)description
+{
     return [NSString stringWithFormat:@"%@/%@",self.from,self.subject];
 }
 

@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		7347C6D6191BA27A00F21F09 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7347C6D7191BA27A00F21F09 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				7347C6DA191BA31A00F21F09 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		6317C0D718A5419600479569 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6317C0D118A5414E00479569 /* WebKit.framework */; };
 		6367D01618AD457E00B60DF4 /* SearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6367D01318AD457E00B60DF4 /* SearchField.m */; };
@@ -614,6 +628,7 @@
 			targets = (
 				736094101896744D00E664B4 /* Mail */,
 				736094311896744D00E664B4 /* MailTests */,
+				7347C6D6191BA27A00F21F09 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -726,6 +741,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7347C6DA191BA31A00F21F09 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"ETML\";\ncompanyID=\"ch.ETML\";\ncompanyURL=\"http://etml.ch\";\ntarget=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7360940D1896744D00E664B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -800,6 +831,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7347C6D8191BA27A00F21F09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7347C6D9191BA27A00F21F09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		736094401896744D00E664B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -937,6 +982,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7347C6D7191BA27A00F21F09 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7347C6D8191BA27A00F21F09 /* Debug */,
+				7347C6D9191BA27A00F21F09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7360940C1896744D00E664B4 /* Build configuration list for PBXProject "Mail" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
