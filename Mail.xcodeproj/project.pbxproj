@@ -989,6 +989,7 @@
 				7347C6D9191BA27A00F21F09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7360940C1896744D00E664B4 /* Build configuration list for PBXProject "Mail" */ = {
 			isa = XCConfigurationList;

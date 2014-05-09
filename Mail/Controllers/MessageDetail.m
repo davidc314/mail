@@ -29,7 +29,7 @@
 
 - (void) doubleClick:(id) sender
 {
-    
+    [self openAttachment:sender];
 }
 
 - (void) rightClicked:(id)sender event:(NSEvent *)event
@@ -96,6 +96,42 @@
 
 }
 - (IBAction)saveAttachment:(id)sender {
+    
+    // Single selection
+    if ([[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]].count == 1) {
+        
+        Attachment *a = [[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]][0];
+        
+        NSSavePanel *savePanel = [NSSavePanel savePanel];
+        [savePanel setNameFieldStringValue:a.name];
+        
+        NSInteger result = [savePanel runModal];
+        
+        if(result == NSOKButton) {
+            [a.data writeToFile:savePanel.URL.path atomically:YES];
+        }
+    }
+    // Multiple selection
+    else {
+        NSOpenPanel *choseDirectoryPanel = [NSOpenPanel openPanel];
+        
+        [choseDirectoryPanel setCanChooseFiles:NO];
+        [choseDirectoryPanel setCanChooseDirectories:YES];
+        [choseDirectoryPanel setTitle:@"Save"];
+        [choseDirectoryPanel setPrompt:@"Save"];
+        
+        NSInteger result = [choseDirectoryPanel runModal];
+        
+        if(result == NSOKButton) {
+            
+            //Save all selected files
+            for (Attachment *a in [[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]]) {
+                [a.data writeToFile:[choseDirectoryPanel.URL.path stringByAppendingPathComponent:a.name] atomically:YES];
+            }
+            
+        }
+    }
+    
 }
 @end
 
