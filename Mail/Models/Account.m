@@ -172,16 +172,15 @@
             NSMutableArray *pathComponents = [[fetchedFolder.path componentsSeparatedByString:[NSString stringWithFormat:@"%c" , fetchedFolder.delimiter]] mutableCopy];
             [pathComponents removeObject:@"[Gmail]"];
             
+            
             Folder *folder = [[Folder alloc]initWithName:fetchedFolder.path flags:fetchedFolder.flags];
             
             if (pathComponents.count == 1) {
                 [folders addObject:folder];
+                folder.label = [pathComponents lastObject];
                 [folder fetchMessagesHeadersForAccount:self];
-                
-                if ([folder.path isEqualToString:@"INBOX"]) {
-                    folder.label = @"Inbox";
-                }
             }
+            
             else if (pathComponents.count > 0) {
                 
                 NSMutableArray *lastFolders = folders;
@@ -201,13 +200,9 @@
  
         }
         
-        if (![self isGMAIL]) {
-            self.folders = folders;
-            [self setFoldersLabels];
-        }
-        else {
-            self.folders = [self sortGMAILFolders:folders];
-        }
+        self.folders = folders;
+        [self setFoldersLabelsAndIndexes];
+        self.folders = self.folders;
         [self registerAsObserver];
         
     }];
@@ -224,101 +219,39 @@
 }
 
 
-- (void)setFoldersLabels
+- (void)setFoldersLabelsAndIndexes
 {
-    NSMutableDictionary *labels = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   0,@"Inbox",
-                                   1,@"Sent",
-                                   2,@"Draft",
-                                   3,@"Important",
-                                   4,@"Starred",
-                                   5,@"Trash",
-                                   6,@"Spam",
-                                   7,@"All messages",
+    NSArray *folderOrder = [NSArray arrayWithObjects:
+                                   @"Inbox",
+                                   @"Sent",
+                                   @"Drafts",
+                                   @"Important",
+                                   @"Starred",
+                                   @"Trash",
+                                   @"Spam",
+                                   @"All messages",
                                    nil];
-    
-    NSMutableDictionary * folderPaths = [NSMutableDictionary dictionary];
-    [folderPaths setValue:self.provider.sentMailFolderPath forKey:@"Sent"];
-    [folderPaths setValue:self.provider.draftsFolderPath forKey:@"Drafts"];
-    [folderPaths setValue:self.provider.importantFolderPath forKey:@"Important"];
-    [folderPaths setValue:self.provider.starredFolderPath forKey:@"Starred"];
-    [folderPaths setValue:self.provider.trashFolderPath forKey:@"Trash"];
-    [folderPaths setValue:self.provider.spamFolderPath forKey:@"Spam"];
-    [folderPaths setValue:self.provider.allMailFolderPath forKey:@"All messages"];
 
-
-    for (id path in folderPaths) {
-        for (Folder *folder in self.folders) {
-            if ([folder.path isEqualToString:folderPaths[path]]) {
-                folder.label = path;
-            }
-            
-        }
-    }
-    
     for (Folder *folder in self.folders) {
-        folder.index = (int)[labels objectForKey:folder.label];
-        NSLog(@"%lu",folder.index);
+        
+        NSUInteger index = 10;
+        
+        if ([folder.path isEqualToString:@"INBOX"]) {index = 0;} // Inbox
+        else if ([folder.path isEqualToString:self.provider.sentMailFolderPath] || (folder.flags & MCOIMAPFolderFlagSentMail)) {index = 1;} // Sent
+        else if ([folder.path isEqualToString:self.provider.draftsFolderPath] || (folder.flags & MCOIMAPFolderFlagDrafts)) {index = 2;} // Drafts
+        else if ([folder.path isEqualToString:self.provider.importantFolderPath] || (folder.flags & MCOIMAPFolderFlagImportant)) {index = 3;} // Important
+        else if ([folder.path isEqualToString:self.provider.starredFolderPath] || (folder.flags & MCOIMAPFolderFlagStarred)) {index = 4;} // Starred
+        else if ([folder.path isEqualToString:self.provider.trashFolderPath] || (folder.flags & MCOIMAPFolderFlagTrash)) {index = 5;} // Trash
+        else if ([folder.path isEqualToString:self.provider.spamFolderPath] || (folder.flags & MCOIMAPFolderFlagSpam)) {index = 6;} // Spam
+        else if ([folder.path isEqualToString:self.provider.allMailFolderPath] || (folder.flags & MCOIMAPFolderFlagAllMail)) {index = 7;} // All Mail
+        
+        if (index <= folderOrder.count) {
+            folder.label = folderOrder[index];
+        }
+        folder.index = [folderOrder indexOfObject:folder.label];;
     }
 }
 
-- (id) sortGMAILFolders:(NSMutableArray *)folders {
-    NSMutableArray *sortedFolders = [NSMutableArray array];
-    
-    for (Folder *folder in folders) {
-        if ([folder.path isEqualToString:@"INBOX"]) {
-            [sortedFolders addObject:folder];
-            folder.label = @"Inbox";
-            [folders removeObject:folder];
-            break;
-        }
-    }
-    
-    for (int i = 0; i<=12; i++) {
-        for (Folder *folder in folders) {
-            if (folder.flags & (1 << i)) {
-                [sortedFolders addObject:folder];
-                
-                switch (1 << i) {
-                    case (1 << 5):
-                        folder.label = @"Sent";
-                        break;
-                    case (1 << 6):
-                        folder.label = @"Starred";
-                        break;
-                    case (1 << 7):
-                        folder.label = @"All";
-                        break;
-                    case (1 << 8):
-                        folder.label = @"Trash";
-                        break;
-                    case (1 << 9):
-                        folder.label = @"Drafts";
-                        break;
-                    case (1 << 10):
-                        folder.label = @"Spam";
-                        break;
-                    case (1 << 11):
-                        folder.label = @"Important";
-                        break;
-                    case (1 << 12):
-                        folder.label = @"Archive";
-                        break;
-                    default:
-                        folder.label = folder.path;
-                        break;
-                }
-                
-                [folders removeObject:folder];
-                break;
-            }
-            
-        }
-    }
-    [sortedFolders addObjectsFromArray:folders];
-    
-    return sortedFolders;
-}
 - (BOOL) isLeaf {
     return NO;
 }
