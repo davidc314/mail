@@ -37,4 +37,5 @@
  @return Une instance initialisée de la classe Attachment
 */
 - (id)initWithName:(NSString *)name size:(UInt64)size data:(NSData *)data;
+
 @end

@@ -11,7 +11,7 @@
 #import "Message.h"
 
 /** Controlleur de l'interface de visualisation du contenu d'un message */
-@interface MessageDetail : NSWindowController
+@interface MessageDetail : NSWindowController <NSCollectionViewDelegate>
 
 /** Champ HTML pour le contenu du message */
 @property (weak) IBOutlet WebView *body;

@@ -20,11 +20,11 @@
         [[_body mainFrame] loadHTMLString:msgBody baseURL:nil];
         self.message.attachments = self.message.attachments;
         self.fetching = NO;
-    }]; 
-    
+    }];
     return self;
 }
 - (void) windowDidLoad {
+    [self.attachmentCollectionView setDraggingSourceOperationMask:NSDragOperationCopy forLocal:NO];
 }
 
 -(void)doubleClick:(id) sender
@@ -131,6 +131,24 @@
         }
     }
     
+}
+
+- (BOOL)collectionView:(NSCollectionView *)cv writeItemsAtIndexes:(NSIndexSet *)indexes toPasteboard:(NSPasteboard *)pasteboard
+{
+    NSURL *temporaryDirectoryURL = [NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES];
+    NSMutableArray *urls = [NSMutableArray array];
+    
+    for (Attachment *a in [self.message.attachments objectsAtIndexes:indexes]) {
+         NSURL *url = [temporaryDirectoryURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@", a.name]];
+        [urls addObject:url];
+        [a.data writeToURL:url atomically:YES];
+    }
+    if ([urls count] > 0)
+    {
+        [pasteboard clearContents];
+        return [pasteboard writeObjects:urls];
+    }
+    return NO;
 }
 @end
 
