@@ -616,7 +616,7 @@ CA
                                                                                 <constraint firstAttribute="height" constant="12" id="lcv-sS-N19"/>
                                                                                 <constraint firstAttribute="width" constant="12" id="mAC-zn-Og0"/>
                                                                             </constraints>
-                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="reply" id="Tnq-fH-OGv"/>
+                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="replyTemplate" id="Tnq-fH-OGv"/>
                                                                             <connections>
                                                                                 <binding destination="Nt3-Jo-BsW" name="hidden" keyPath="objectValue.replied" id="n6V-09-qKx">
                                                                                     <dictionary key="options">
@@ -651,7 +651,7 @@ CA
                                                                                 <constraint firstAttribute="height" constant="12" id="HWG-9p-N91"/>
                                                                                 <constraint firstAttribute="width" constant="12" id="KBe-l0-WbA"/>
                                                                             </constraints>
-                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="attachment" id="PlW-p4-V3w"/>
+                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="attachmentTemplate" id="PlW-p4-V3w"/>
                                                                             <connections>
                                                                                 <binding destination="Nt3-Jo-BsW" name="hidden" keyPath="objectValue.hasAttachments" id="R1f-zy-c18">
                                                                                     <dictionary key="options">
@@ -667,7 +667,7 @@ CA
                                                                                 <constraint firstAttribute="height" constant="12" id="5Dh-B8-4yH"/>
                                                                                 <constraint firstAttribute="width" constant="12" id="vDV-jO-ZCq"/>
                                                                             </constraints>
-                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="forward" id="Pht-5p-a19"/>
+                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="forwardTemplate" id="Pht-5p-a19"/>
                                                                             <connections>
                                                                                 <binding destination="Nt3-Jo-BsW" name="hidden" keyPath="objectValue.forwarded" id="a60-aZ-4HK">
                                                                                     <dictionary key="options">
@@ -802,15 +802,16 @@ CA
         <treeController objectClassName="" automaticallyPreparesContent="YES" childrenKeyPath="folders" leafKeyPath="isLeaf" id="AnL-EG-RYc">
             <connections>
                 <binding destination="494" name="contentArray" keyPath="accountsManager.accounts" id="zBS-1b-1s4"/>
+                <binding destination="494" name="sortDescriptors" keyPath="sortedFolders" id="kRR-26-7q1"/>
             </connections>
         </treeController>
         <userDefaultsController representsSharedInstance="YES" id="CjS-36-ZTs"/>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="attachment" width="12" height="12"/>
+        <image name="attachmentTemplate" width="12" height="12"/>
         <image name="bar" width="3" height="64"/>
-        <image name="forward" width="24" height="24"/>
-        <image name="reply" width="24" height="24"/>
+        <image name="forwardTemplate" width="24" height="24"/>
+        <image name="replyTemplate" width="24" height="24"/>
     </resources>
 </document>

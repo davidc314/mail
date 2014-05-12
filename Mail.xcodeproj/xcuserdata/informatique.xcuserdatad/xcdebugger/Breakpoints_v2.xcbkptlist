@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mail/AppDelegate.m"
-            timestampString = "420635576.628721"
+            timestampString = "421333506.586913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "-deleteMessage:"
             landmarkType = "5">
          </BreakpointContent>

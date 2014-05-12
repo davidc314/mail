@@ -80,10 +80,10 @@
 
 - (void)fetchBodyForFolder:(Folder *)folder account:(Account *)account completion:(void (^)(NSString *, NSMutableArray *))handler
 {
-    MCOIMAPFetchContentOperation *fetchContentOperation = [account.imapSession fetchMessageByUIDOperationWithFolder:folder.name uid:(int)self.uid];
+    MCOIMAPFetchContentOperation *fetchContentOperation = [account.imapSession fetchMessageByUIDOperationWithFolder:folder.path uid:(int)self.uid];
     
     
-    NSLog(@"Fetch message (%lu) body for acccount : %@ folder : %@",self.uid,account,folder.name);
+    NSLog(@"Fetch message (%lu) body for acccount : %@ folder : %@",self.uid,account,folder.path);
     
     [fetchContentOperation start:^(NSError *error,NSData *data){
         
@@ -93,7 +93,7 @@
         }
         
         MCOMessageParser * msg = [MCOMessageParser messageParserWithData:data];
-        MCOIMAPOperation *setFlagsSeen = [account.imapSession storeFlagsOperationWithFolder:folder.name uids:[MCOIndexSet indexSetWithIndex:self.uid] kind:MCOIMAPStoreFlagsRequestKindAdd flags:MCOMessageFlagSeen];
+        MCOIMAPOperation *setFlagsSeen = [account.imapSession storeFlagsOperationWithFolder:folder.path uids:[MCOIndexSet indexSetWithIndex:self.uid] kind:MCOIMAPStoreFlagsRequestKindAdd flags:MCOMessageFlagSeen];
         
         //Flag seen
         [setFlagsSeen start:^(NSError *error){}];

@@ -28,8 +28,8 @@
 @property (weak) IBOutlet NSArrayController *arrayController;
 @property (weak) IBOutlet NSTreeController *treeController;
 
-@property (weak) NSArray *sortedMessages;
-
+@property (strong) NSArray *sortedMessages;
+@property (strong) NSArray *sortedFolders;
 
 @property (strong) AccountsManager *accountsManager;
 @property (strong) Account *selectedAccount;

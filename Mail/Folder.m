@@ -19,8 +19,8 @@
     self = [super init];
     if (self) {
         _flags = flags;
-        _name = name;
-        _label = _name;
+        _path = name;
+        _label = _path;
         _folders = [NSMutableArray array];
         
         
@@ -38,7 +38,7 @@
 {
     MCOIMAPMessagesRequestKind requestKind = MCOIMAPMessagesRequestKindHeaders | MCOIMAPMessagesRequestKindFlags | MCOIMAPMessagesRequestKindStructure;
     MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(1, UINT64_MAX)];
-    MCOIMAPFetchMessagesOperation *fetchOperation = [account.imapSession fetchMessagesByUIDOperationWithFolder:self.name requestKind:requestKind uids:uids];
+    MCOIMAPFetchMessagesOperation *fetchOperation = [account.imapSession fetchMessagesByUIDOperationWithFolder:self.path requestKind:requestKind uids:uids];
     
     [fetchOperation start:^(NSError * error, NSArray * fetchedMessages, MCOIndexSet * vanishedMessages) {
         if(error) {
@@ -126,10 +126,10 @@
 
 - (void) startIDLEForAccount:(Account *)account {
     Message *lastMessage = [self.messages lastObject];
-    MCOIMAPIdleOperation *idleOperation = [account.imapSession idleOperationWithFolder:self.name lastKnownUID:(int)[lastMessage uid]];
+    MCOIMAPIdleOperation *idleOperation = [account.imapSession idleOperationWithFolder:self.path lastKnownUID:(int)[lastMessage uid]];
     // NSLog(@"Start IDLE %@/%@",account,self);
     [idleOperation start:^(NSError *error) {
-        NSLog(@"IDLE : %@/%@",account,self.name);
+        NSLog(@"IDLE : %@/%@",account,self.path);
         
         [self fetchMessagesHeadersForAccount:account];
         if (error) {

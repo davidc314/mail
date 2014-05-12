@@ -82,6 +82,8 @@
     
     self.sameAuth = [decoder decodeBoolForKey:SAME_AUTH];
     
+    self.provider = [[MCOMailProvidersManager sharedManager] providerForEmail:self.mail];
+    
     [self connectToIMAP];
     [self connectToSMTP];
     
@@ -175,6 +177,10 @@
             if (pathComponents.count == 1) {
                 [folders addObject:folder];
                 [folder fetchMessagesHeadersForAccount:self];
+                
+                if ([folder.path isEqualToString:@"INBOX"]) {
+                    folder.label = @"Inbox";
+                }
             }
             else if (pathComponents.count > 0) {
                 
@@ -194,8 +200,10 @@
             
  
         }
+        
         if (![self isGMAIL]) {
-            self.folders = [self sortFolders:folders provider:[[MCOMailProvidersManager sharedManager] providerForEmail:self.mail]];
+            self.folders = folders;
+            [self setFoldersLabels];
         }
         else {
             self.folders = [self sortGMAILFolders:folders];
@@ -216,46 +224,49 @@
 }
 
 
-- (id) sortFolders:(NSMutableArray *)folders provider:(MCOMailProvider *)provider {
-    NSMutableArray *sortedFolders = [NSMutableArray array];
-    NSDictionary * folderPaths = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  provider.sentMailFolderPath,@"Sent",
-                                  provider.draftsFolderPath,@"Drafts",
-                                  provider.importantFolderPath,@"Important",
-                                  provider.starredFolderPath,@"Starred",
-                                  provider.trashFolderPath,@"Trash",
-                                  provider.spamFolderPath,@"Spam",
-                                  provider.allMailFolderPath,@"All messages",
-                                  nil];
-    for (Folder *folder in folders) {
-        if ([folder.name isEqualToString:@"INBOX"]) {
-            [sortedFolders addObject:folder];
-            folder.label = @"Inbox";
-            [folders removeObject:folder];
-            break;
-        }
-    }
+- (void)setFoldersLabels
+{
+    NSMutableDictionary *labels = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   0,@"Inbox",
+                                   1,@"Sent",
+                                   2,@"Draft",
+                                   3,@"Important",
+                                   4,@"Starred",
+                                   5,@"Trash",
+                                   6,@"Spam",
+                                   7,@"All messages",
+                                   nil];
+    
+    NSMutableDictionary * folderPaths = [NSMutableDictionary dictionary];
+    [folderPaths setValue:self.provider.sentMailFolderPath forKey:@"Sent"];
+    [folderPaths setValue:self.provider.draftsFolderPath forKey:@"Drafts"];
+    [folderPaths setValue:self.provider.importantFolderPath forKey:@"Important"];
+    [folderPaths setValue:self.provider.starredFolderPath forKey:@"Starred"];
+    [folderPaths setValue:self.provider.trashFolderPath forKey:@"Trash"];
+    [folderPaths setValue:self.provider.spamFolderPath forKey:@"Spam"];
+    [folderPaths setValue:self.provider.allMailFolderPath forKey:@"All messages"];
+
+
     for (id path in folderPaths) {
-        for (Folder *folder in folders) {
-            if ([folder.name isEqualToString:folderPaths[path]]) {
-                [sortedFolders addObject:folder];
+        for (Folder *folder in self.folders) {
+            if ([folder.path isEqualToString:folderPaths[path]]) {
                 folder.label = path;
-                [folders removeObject:folder];
-                break;
             }
             
         }
     }
     
-    [sortedFolders addObjectsFromArray:folders];
-    
-    return sortedFolders;
+    for (Folder *folder in self.folders) {
+        folder.index = (int)[labels objectForKey:folder.label];
+        NSLog(@"%lu",folder.index);
+    }
 }
+
 - (id) sortGMAILFolders:(NSMutableArray *)folders {
     NSMutableArray *sortedFolders = [NSMutableArray array];
     
     for (Folder *folder in folders) {
-        if ([folder.name isEqualToString:@"INBOX"]) {
+        if ([folder.path isEqualToString:@"INBOX"]) {
             [sortedFolders addObject:folder];
             folder.label = @"Inbox";
             [folders removeObject:folder];
@@ -294,7 +305,7 @@
                         folder.label = @"Archive";
                         break;
                     default:
-                        folder.label = folder.name;
+                        folder.label = folder.path;
                         break;
                 }
                 

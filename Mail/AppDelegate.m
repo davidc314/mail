@@ -45,6 +45,10 @@
     NSSortDescriptor *messageSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
     _sortedMessages = [NSArray arrayWithObject:messageSortDescriptor];
     
+    //Sort the folders
+    NSSortDescriptor *folderSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"index"
+                                                 ascending:YES];
+    self.sortedFolders = [NSArray arrayWithObject:folderSortDescriptor];
     return self;
 }
 
@@ -53,13 +57,8 @@
     [self.inboxTable setDoubleAction:@selector(doubleClicked)];
     
     [self.progress setHidden:YES];
-    //[self choseAccount:[self.statusMenu itemAtIndex:0]];
     
     [self.treeController rearrangeObjects];
-    
-    [[NSImage imageNamed:@"reply"] setTemplate:YES];
-    [[NSImage imageNamed:@"forward"] setTemplate:YES];
-    [[NSImage imageNamed:@"attachment"] setTemplate:YES];
 }
 
 
@@ -83,20 +82,6 @@
     self.selectedAccount = [[[sender itemAtRow:[sender selectedRow]] parentNode] representedObject];
     self.selectedFolder = [[sender itemAtRow:[sender selectedRow]] representedObject];
 }
-/*
-- (void) choseAccount:(id)sender {
-    self.selectedAccount = [[self.accountsManager accounts] objectAtIndex:[sender tag]];
-    
-    for (NSMenuItem *item in self.statusMenu.itemArray) {
-        [item setState:0];
-    }
-    [sender setState:1];
-    
-    self.selectedFolder = self.selectedAccount.folders[0];
-    
-    [self.title setStringValue:[NSString stringWithFormat:@"%@ <%@>",self.selectedAccount.name,self.selectedAccount.mail]];
-    [self.treeController rearrangeObjects];
-}*/
 
 - (IBAction)deleteMessage:(id)sender {
     
@@ -128,39 +113,6 @@
     
     
 }
-/*
-- (IBAction)fetchMessagesForAccount:(Account *)account folder:(Folder *)folder {
-    NSLog(@"Fetch for folder : %@",folder.name);
-    
-    [Message fetchMessagesInFolder:folder account:account completion:^(NSMutableArray *msgs,NSUInteger nbUnread) {
-        self.messages = msgs;
-        [self.progress stopAnimation:self];
-        [self.progress setHidden:YES];
-        folder.nbUnseenMessages = nbUnread;
-        account.nbUnread = 0;
-        
-        for (Folder *folder in account.folders) {
-            account.nbUnread += folder.nbUnseenMessages;
-        }
-        NSLog(@"Unread : %lu",account.nbUnread);
-        account.menuViewController.number = [NSString stringWithFormat:@"%lu",account.nbUnread];
-        [self refreshAccountMenu];
-    }];
-}
-
-- (void) fetchFolders {
-    [Folder fetchFoldersInAccount:selectedAccount completion:^(NSMutableArray *folders){
-        self.folders = folders;
-        selectedAccount.folders = folders;
-        
-        if ([[selectedAccount folders] count] != 0 && !selectedFolder) {
-            selectedFolder = [selectedAccount folders][0];
-        }
-        
-        [self fetchMessagesForAccount:selectedAccount folder:selectedFolder];
-    }];
-}
-*/
 - (void)doubleClicked
 {
     if([self.inboxTable clickedRow] != -1) {

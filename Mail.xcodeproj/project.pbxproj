@@ -43,8 +43,8 @@
 		7313087018F51AA900243913 /* trash.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313086918F51AA900243913 /* trash.pdf */; };
 		7313087218F51FD800243913 /* folder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313087118F51FD800243913 /* folder.pdf */; };
 		7313087518F52D6800243913 /* FolderRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7313087418F52D6800243913 /* FolderRowView.m */; };
-		7313087718F570BC00243913 /* forward.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313087618F570BC00243913 /* forward.pdf */; };
-		7313087918F570C300243913 /* reply.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313087818F570C300243913 /* reply.pdf */; };
+		7313087718F570BC00243913 /* forwardTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313087618F570BC00243913 /* forwardTemplate.pdf */; };
+		7313087918F570C300243913 /* replyTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313087818F570C300243913 /* replyTemplate.pdf */; };
 		7313087B18F5782700243913 /* search.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313087A18F5782700243913 /* search.pdf */; };
 		731812DD18F8246F008E6D44 /* icon_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 731812D818F8246F008E6D44 /* icon_16x16.png */; };
 		731812DE18F8246F008E6D44 /* icon_32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 731812D918F8246F008E6D44 /* icon_32x32.png */; };
@@ -99,7 +99,7 @@
 		73BB96811913BC2C003EBEC7 /* forward_buttonTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73BB967F1913BC2C003EBEC7 /* forward_buttonTemplate.pdf */; };
 		73BB96821913BC2C003EBEC7 /* reply_buttonTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73BB96801913BC2C003EBEC7 /* reply_buttonTemplate.pdf */; };
 		73BB96841913BF8C003EBEC7 /* deleteTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73BB96831913BF8C003EBEC7 /* deleteTemplate.pdf */; };
-		73C40AE5190E564F0007C2BE /* attachment.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73C40AE4190E564F0007C2BE /* attachment.pdf */; };
+		73C40AE5190E564F0007C2BE /* attachmentTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73C40AE4190E564F0007C2BE /* attachmentTemplate.pdf */; };
 		73C40AE7190E5A760007C2BE /* new_logo_notif.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73C40AE6190E5A760007C2BE /* new_logo_notif.pdf */; };
 /* End PBXBuildFile section */
 
@@ -193,8 +193,8 @@
 		7313087118F51FD800243913 /* folder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = folder.pdf; path = Resources/folders/folder.pdf; sourceTree = "<group>"; };
 		7313087318F52D6800243913 /* FolderRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderRowView.h; sourceTree = "<group>"; };
 		7313087418F52D6800243913 /* FolderRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderRowView.m; sourceTree = "<group>"; };
-		7313087618F570BC00243913 /* forward.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = forward.pdf; path = Resources/forward.pdf; sourceTree = "<group>"; };
-		7313087818F570C300243913 /* reply.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = reply.pdf; path = Resources/reply.pdf; sourceTree = "<group>"; };
+		7313087618F570BC00243913 /* forwardTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = forwardTemplate.pdf; path = Resources/forwardTemplate.pdf; sourceTree = "<group>"; };
+		7313087818F570C300243913 /* replyTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = replyTemplate.pdf; path = Resources/replyTemplate.pdf; sourceTree = "<group>"; };
 		7313087A18F5782700243913 /* search.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = search.pdf; path = Resources/search.pdf; sourceTree = "<group>"; };
 		731812D818F8246F008E6D44 /* icon_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_16x16.png; path = Resources/logo/logo_new.iconset/icon_16x16.png; sourceTree = "<group>"; };
 		731812D918F8246F008E6D44 /* icon_32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_32x32.png; path = Resources/logo/logo_new.iconset/icon_32x32.png; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 		73BB967F1913BC2C003EBEC7 /* forward_buttonTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = forward_buttonTemplate.pdf; path = Resources/forward_buttonTemplate.pdf; sourceTree = "<group>"; };
 		73BB96801913BC2C003EBEC7 /* reply_buttonTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = reply_buttonTemplate.pdf; path = Resources/reply_buttonTemplate.pdf; sourceTree = "<group>"; };
 		73BB96831913BF8C003EBEC7 /* deleteTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = deleteTemplate.pdf; path = Resources/deleteTemplate.pdf; sourceTree = "<group>"; };
-		73C40AE4190E564F0007C2BE /* attachment.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = attachment.pdf; path = Resources/attachment.pdf; sourceTree = "<group>"; };
+		73C40AE4190E564F0007C2BE /* attachmentTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = attachmentTemplate.pdf; path = Resources/attachmentTemplate.pdf; sourceTree = "<group>"; };
 		73C40AE6190E5A760007C2BE /* new_logo_notif.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = new_logo_notif.pdf; path = Resources/logo/new_logo_notif.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,9 +301,9 @@
 				73BB96831913BF8C003EBEC7 /* deleteTemplate.pdf */,
 				734EC4D218F2CD3400DD1B2A /* folders */,
 				7374E1DF18E96E2600741BE2 /* bar.png */,
-				73C40AE4190E564F0007C2BE /* attachment.pdf */,
-				7313087618F570BC00243913 /* forward.pdf */,
-				7313087818F570C300243913 /* reply.pdf */,
+				73C40AE4190E564F0007C2BE /* attachmentTemplate.pdf */,
+				7313087618F570BC00243913 /* forwardTemplate.pdf */,
+				7313087818F570C300243913 /* replyTemplate.pdf */,
 				7313087A18F5782700243913 /* search.pdf */,
 				7375F7D8190F849A0076BF69 /* opened_folder.pdf */,
 				7375F7DE190F8A4D0076BF69 /* save.pdf */,
@@ -684,11 +684,11 @@
 				7360941F1896744D00E664B4 /* InfoPlist.strings in Resources */,
 				734EC4C218F2C2EC00DD1B2A /* openedmail_margin_32x32.png in Resources */,
 				734EC4C518F2C2EC00DD1B2A /* openedmail_margin_256x256.png in Resources */,
-				73C40AE5190E564F0007C2BE /* attachment.pdf in Resources */,
+				73C40AE5190E564F0007C2BE /* attachmentTemplate.pdf in Resources */,
 				7313086B18F51AA900243913 /* important.pdf in Resources */,
 				731812DE18F8246F008E6D44 /* icon_32x32.png in Resources */,
 				73202CF118ED33D500F0594B /* openedmail_512x512.png in Resources */,
-				7313087918F570C300243913 /* reply.pdf in Resources */,
+				7313087918F570C300243913 /* replyTemplate.pdf in Resources */,
 				7313086D18F51AA900243913 /* outbox.pdf in Resources */,
 				731812DD18F8246F008E6D44 /* icon_16x16.png in Resources */,
 				731812DF18F8246F008E6D44 /* icon_128x128.png in Resources */,
@@ -703,7 +703,7 @@
 				73202CFF18ED3BD500F0594B /* closedmail_512x512.png in Resources */,
 				73202CFC18ED3BD500F0594B /* closedmail_64x64.png in Resources */,
 				6367D03018AD4A9700B60DF4 /* NewMessage.xib in Resources */,
-				7313087718F570BC00243913 /* forward.pdf in Resources */,
+				7313087718F570BC00243913 /* forwardTemplate.pdf in Resources */,
 				7313086C18F51AA900243913 /* inbox.pdf in Resources */,
 				73BB96811913BC2C003EBEC7 /* forward_buttonTemplate.pdf in Resources */,
 				73202CFA18ED3BD500F0594B /* closedmail_16x16.png in Resources */,

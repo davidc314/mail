@@ -18,7 +18,7 @@
 @property (strong) NSString *label;
 
 /** Chemin */
-@property (strong) NSString *name;
+@property (strong) NSString *path;
 
 /** Type */
 @property (nonatomic,assign) MCOIMAPFolderFlag flags;
@@ -31,6 +31,9 @@
 
 /** Nombre de message non-lus */
 @property (assign) NSUInteger nbUnread;
+
+/** Index d'ordre */
+@property (assign) NSUInteger index;
 
 /** Initialisation d'un dossier 
  @param name Chemin

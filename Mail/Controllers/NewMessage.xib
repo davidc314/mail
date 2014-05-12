@@ -103,17 +103,17 @@
                         <rect key="frame" x="-1" y="42" width="801" height="415"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" id="uca-3G-y87">
-                            <rect key="frame" x="1" y="1" width="784" height="413"/>
+                            <rect key="frame" x="1" y="1" width="799" height="413"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="W9m-CD-M8y">
-                                    <rect key="frame" x="0.0" y="0.0" width="784" height="413"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="799" height="413"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="784" height="413"/>
+                                    <size key="minSize" width="799" height="413"/>
                                     <size key="maxSize" width="801" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="784" height="413"/>
+                                    <size key="minSize" width="799" height="413"/>
                                     <size key="maxSize" width="801" height="10000000"/>
                                 </textView>
                             </subviews>

@@ -31,10 +31,14 @@
 @property (strong) MCOIMAPSession *imapSession;
 @property (strong) MCOSMTPSession *smtpSession;
 
+@property (strong) MCOMailProvider *provider;
+
 @property (assign) BOOL sameAuth;
 @property (strong) NSMutableArray *folders;
 
 @property (assign) BOOL valid;
+
+@property (assign) NSUInteger index;
 
 @property (assign, nonatomic) NSUInteger nbUnread;
 
