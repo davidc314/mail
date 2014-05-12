@@ -9,6 +9,7 @@
 #import "NewMessage.h"
 #import "Message.h"
 #import "Attachment.h"
+#import "AccountsManager.h"
 
 @implementation NewMessage {
     NSString *delimiterString;
@@ -26,6 +27,7 @@
     [_bcc setTokenizingCharacterSet:tokenizingCharSet];
     
     _attachments = [NSMutableArray array];
+    _accounts = [[AccountsManager sharedManager] accounts];
     return self;
 }
 

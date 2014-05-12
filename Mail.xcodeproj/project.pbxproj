@@ -97,6 +97,7 @@
 		7375F7DF190F8A4D0076BF69 /* save.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7DE190F8A4D0076BF69 /* save.pdf */; };
 		7389B1401920C28200C84A5A /* UpperCaseValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */; };
 		739ABA0418F2918800EBD5F8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739ABA0318F2918800EBD5F8 /* MainMenu.xib */; };
+		73ADEF7C1920F9BE004BE462 /* attachmentButtonTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73ADEF7B1920F9BE004BE462 /* attachmentButtonTemplate.pdf */; };
 		73BB96811913BC2C003EBEC7 /* forward_buttonTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73BB967F1913BC2C003EBEC7 /* forward_buttonTemplate.pdf */; };
 		73BB96821913BC2C003EBEC7 /* reply_buttonTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73BB96801913BC2C003EBEC7 /* reply_buttonTemplate.pdf */; };
 		73BB96841913BF8C003EBEC7 /* deleteTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73BB96831913BF8C003EBEC7 /* deleteTemplate.pdf */; };
@@ -265,6 +266,7 @@
 		7389B13E1920C28200C84A5A /* UpperCaseValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpperCaseValueTransformer.h; sourceTree = "<group>"; };
 		7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpperCaseValueTransformer.m; sourceTree = "<group>"; };
 		739ABA0318F2918800EBD5F8 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		73ADEF7B1920F9BE004BE462 /* attachmentButtonTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = attachmentButtonTemplate.pdf; path = Resources/attachmentButtonTemplate.pdf; sourceTree = "<group>"; };
 		73BB967F1913BC2C003EBEC7 /* forward_buttonTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = forward_buttonTemplate.pdf; path = Resources/forward_buttonTemplate.pdf; sourceTree = "<group>"; };
 		73BB96801913BC2C003EBEC7 /* reply_buttonTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = reply_buttonTemplate.pdf; path = Resources/reply_buttonTemplate.pdf; sourceTree = "<group>"; };
 		73BB96831913BF8C003EBEC7 /* deleteTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = deleteTemplate.pdf; path = Resources/deleteTemplate.pdf; sourceTree = "<group>"; };
@@ -299,8 +301,7 @@
 		6317C0E418A54BA900479569 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				73BB967F1913BC2C003EBEC7 /* forward_buttonTemplate.pdf */,
-				73BB96801913BC2C003EBEC7 /* reply_buttonTemplate.pdf */,
+				73ADEF821920F9C1004BE462 /* buttons */,
 				73BB96831913BF8C003EBEC7 /* deleteTemplate.pdf */,
 				734EC4D218F2CD3400DD1B2A /* folders */,
 				7374E1DF18E96E2600741BE2 /* bar.png */,
@@ -559,6 +560,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		73ADEF821920F9C1004BE462 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				73BB967F1913BC2C003EBEC7 /* forward_buttonTemplate.pdf */,
+				73BB96801913BC2C003EBEC7 /* reply_buttonTemplate.pdf */,
+				73ADEF7B1920F9BE004BE462 /* attachmentButtonTemplate.pdf */,
+			);
+			name = buttons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -713,6 +724,7 @@
 				73BB96811913BC2C003EBEC7 /* forward_buttonTemplate.pdf in Resources */,
 				73202CFA18ED3BD500F0594B /* closedmail_16x16.png in Resources */,
 				731812E118F8246F008E6D44 /* icon_512x512.png in Resources */,
+				73ADEF7C1920F9BE004BE462 /* attachmentButtonTemplate.pdf in Resources */,
 				7360942D1896744D00E664B4 /* Images.xcassets in Resources */,
 				7313087218F51FD800243913 /* folder.pdf in Resources */,
 				6367D03218AD4A9700B60DF4 /* Settings.xib in Resources */,
