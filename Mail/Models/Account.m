@@ -221,16 +221,7 @@
 
 - (void)setFoldersLabelsAndIndexes
 {
-    NSArray *folderOrder = [NSArray arrayWithObjects:
-                                   @"Inbox",
-                                   @"Sent",
-                                   @"Drafts",
-                                   @"Important",
-                                   @"Starred",
-                                   @"Trash",
-                                   @"Spam",
-                                   @"All messages",
-                                   nil];
+    NSArray *folderOrder = @[@"Inbox",@"Sent",@"Drafts",@"Important",@"Starred",@"Trash",@"Spam",@"All messages"];
 
     for (Folder *folder in self.folders) {
         

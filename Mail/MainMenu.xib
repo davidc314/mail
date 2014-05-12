@@ -458,7 +458,11 @@ CA
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                             <connections>
-                                                                                <binding destination="1wN-tg-FAH" name="value" keyPath="objectValue.label" id="E1S-nl-UoT"/>
+                                                                                <binding destination="1wN-tg-FAH" name="value" keyPath="objectValue.label" id="k4P-zT-qPG">
+                                                                                    <dictionary key="options">
+                                                                                        <string key="NSValueTransformerName">UpperCaseValueTransformer</string>
+                                                                                    </dictionary>
+                                                                                </binding>
                                                                             </connections>
                                                                         </textField>
                                                                     </subviews>

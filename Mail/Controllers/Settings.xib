@@ -455,7 +455,7 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="gVO-Bd-cTm" name="value" keyPath="selection.imapHostname" id="mRM-0v-IGC"/>
+                                                <binding destination="gVO-Bd-cTm" name="value" keyPath="selection.imapSession.hostname" id="fwH-zL-oGy"/>
                                                 <outlet property="delegate" destination="-2" id="dI2-Vr-ot6"/>
                                             </connections>
                                         </textField>

@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "AttachmentView.h"
 
+/** Controlleur d'un AttachmentView */
 @interface AttachmentItemViewController : NSCollectionViewItem <AttachmentViewDelegate>
 
 @end

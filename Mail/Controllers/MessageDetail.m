@@ -11,7 +11,7 @@
 
 @implementation MessageDetail
 
-- (id) initWithMessage:(Message *)message folder:(Folder *)folder account:(Account *)account {
+-(id)initWithMessage:(Message *)message folder:(Folder *)folder account:(Account *)account {
     self = [super initWithWindowNibName:@"MessageDetail"];
     _message = message;
     _fetching = YES;
@@ -27,7 +27,7 @@
 - (void) windowDidLoad {
 }
 
-- (void) doubleClick:(id) sender
+-(void)doubleClick:(id) sender
 {
     [self openAttachment:sender];
 }
@@ -50,7 +50,6 @@
     }
     [NSMenu popUpContextMenu:self.attachmentContextMenu withEvent:event forView:[sender view]];
 }
-
 - (IBAction)openAttachment:(id)sender {
     
     for (Attachment *attachment in [[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]]) {

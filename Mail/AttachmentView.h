@@ -15,6 +15,7 @@
 
 @end
 
+/** Vue personnalisée pour une pièce jointe */
 @interface AttachmentView : NSView
 @property IBOutlet id delegate;
 @property (readwrite) BOOL selected;

@@ -95,6 +95,7 @@
 		7374E1E318E9830F00741BE2 /* MessageRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7374E1E218E9830F00741BE2 /* MessageRowView.m */; };
 		7375F7D9190F849A0076BF69 /* opened_folder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7D8190F849A0076BF69 /* opened_folder.pdf */; };
 		7375F7DF190F8A4D0076BF69 /* save.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7DE190F8A4D0076BF69 /* save.pdf */; };
+		7389B1401920C28200C84A5A /* UpperCaseValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */; };
 		739ABA0418F2918800EBD5F8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739ABA0318F2918800EBD5F8 /* MainMenu.xib */; };
 		73BB96811913BC2C003EBEC7 /* forward_buttonTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73BB967F1913BC2C003EBEC7 /* forward_buttonTemplate.pdf */; };
 		73BB96821913BC2C003EBEC7 /* reply_buttonTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73BB96801913BC2C003EBEC7 /* reply_buttonTemplate.pdf */; };
@@ -261,6 +262,8 @@
 		7374E1E218E9830F00741BE2 /* MessageRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageRowView.m; sourceTree = "<group>"; };
 		7375F7D8190F849A0076BF69 /* opened_folder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = opened_folder.pdf; path = Resources/opened_folder.pdf; sourceTree = "<group>"; };
 		7375F7DE190F8A4D0076BF69 /* save.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = save.pdf; path = Resources/save.pdf; sourceTree = "<group>"; };
+		7389B13E1920C28200C84A5A /* UpperCaseValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpperCaseValueTransformer.h; sourceTree = "<group>"; };
+		7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpperCaseValueTransformer.m; sourceTree = "<group>"; };
 		739ABA0318F2918800EBD5F8 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		73BB967F1913BC2C003EBEC7 /* forward_buttonTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = forward_buttonTemplate.pdf; path = Resources/forward_buttonTemplate.pdf; sourceTree = "<group>"; };
 		73BB96801913BC2C003EBEC7 /* reply_buttonTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = reply_buttonTemplate.pdf; path = Resources/reply_buttonTemplate.pdf; sourceTree = "<group>"; };
@@ -515,6 +518,8 @@
 				731FE27418A36BDF00715E68 /* Views */,
 				73298F4818E1B89F00E05756 /* fileSizeTransformer.h */,
 				73298F4918E1B89F00E05756 /* fileSizeTransformer.m */,
+				7389B13E1920C28200C84A5A /* UpperCaseValueTransformer.h */,
+				7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */,
 				7374E1D818E9400800741BE2 /* dateValueTransformer.h */,
 				7374E1D918E9400800741BE2 /* dateValueTransformer.m */,
 				6317C0E418A54BA900479569 /* Resources */,
@@ -753,7 +758,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"ETML\";\ncompanyID=\"ch.ETML\";\ncompanyURL=\"http://etml.ch\";\ntarget=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"ETML\";\ncompanyID=\"ch.ETML\";\ncompanyURL=\"http://etml.ch\";\ntarget=\"macosx\";\noutputPath=\"/Volumes/PATRIOT/XCode/TPI/Documentation/AppleDoc\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -770,6 +775,7 @@
 				6367D02F18AD4A9700B60DF4 /* NewMessage.m in Sources */,
 				6367D02D18AD4A9700B60DF4 /* MessageDetail.m in Sources */,
 				7353903918DAFE3A00A070F2 /* Folder.m in Sources */,
+				7389B1401920C28200C84A5A /* UpperCaseValueTransformer.m in Sources */,
 				6367D03118AD4A9700B60DF4 /* Settings.m in Sources */,
 				7374E1DA18E9400800741BE2 /* dateValueTransformer.m in Sources */,
 				6367D02318AD4A4B00B60DF4 /* Message.m in Sources */,
