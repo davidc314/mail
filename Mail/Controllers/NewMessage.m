@@ -23,17 +23,18 @@
     
     NSCharacterSet *tokenizingCharSet = [NSCharacterSet characterSetWithCharactersInString:delimiterString];
     [_to setTokenizingCharacterSet:tokenizingCharSet];
-    [_cc setTokenizingCharacterSet:tokenizingCharSet];
-    [_bcc setTokenizingCharacterSet:tokenizingCharSet];
     
     _attachments = [NSMutableArray array];
-    _accounts = [[AccountsManager sharedManager] accounts];
+    self.accounts = [[AccountsManager sharedManager] accounts];
     return self;
 }
 
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+    [self.ccFieldsView setHidden:YES];
+    [self.body registerForDraggedTypes:[NSArray arrayWithObjects:
+                                   NSColorPboardType, NSFilenamesPboardType, nil]];
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
 - (IBAction)attachment:(id)sender {
@@ -52,6 +53,7 @@
     
     
 }
+
 - (IBAction)send:(id)sender {
     NSArray *to = [self.to.stringValue componentsSeparatedByString:delimiterString];
     NSArray *cc = [self.cc.stringValue componentsSeparatedByString:delimiterString];
@@ -89,5 +91,18 @@
 }
 - (void) doubleClick:(id) sender {
     NSLog(@"Attachment %@",sender);
+}
+-(void)dropAttachment:(id) sender
+{
+    NSPasteboard *pboard = [sender draggingPasteboard];
+    NSArray *filenames = [pboard propertyListForType:NSFilenamesPboardType];
+    
+    for (NSString *fileName in filenames) {
+        NSInteger fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:fileName error:NULL] fileSize];
+        Attachment *a = [[Attachment alloc] initWithName:[[NSURL URLWithString:fileName] lastPathComponent]  size:fileSize data:[NSData dataWithContentsOfFile:fileName]];
+        [self.attachments addObject:a];
+        NSLog(@"Attachments :%@",self.attachments);
+        self.attachments = self.attachments;
+    }
 }
 @end

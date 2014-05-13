@@ -9,11 +9,7 @@
             <connections>
                 <outlet property="attachmentCollectionView" destination="MDe-BE-WZx" id="ylb-4V-toS"/>
                 <outlet property="attachmentContextMenu" destination="Ebb-zE-Fi7" id="Cey-OA-k0J"/>
-                <outlet property="attachmentPopupMenu" destination="Ebb-zE-Fi7" id="1bn-Lb-8mm"/>
                 <outlet property="body" destination="I6x-LS-DZh" id="cqb-5b-cwD"/>
-                <outlet property="from" destination="noV-QX-09j" id="lw1-uk-ZSs"/>
-                <outlet property="progress" destination="gK3-lu-hO5" id="dBc-bq-PMs"/>
-                <outlet property="subject" destination="m5n-0b-cef" id="3Ad-cX-NGe"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>
         </customObject>

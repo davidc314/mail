@@ -76,6 +76,15 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Delete" id="xm3-VE-I2c">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="deleteMessage:" target="494" id="e1C-uQ-765"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="Ouc-L1-vDE">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
@@ -590,7 +599,7 @@ CA
                                             <rect key="frame" x="0.0" y="0.0" width="523" height="440"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="ycg-1J-jfG">
+                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="ycg-1J-jfG">
                                                     <rect key="frame" x="0.0" y="0.0" width="523" height="440"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -746,6 +755,7 @@ CA
                                                     </tableColumns>
                                                     <connections>
                                                         <binding destination="gol-Q4-5lU" name="content" keyPath="arrangedObjects" id="XOX-86-1w2"/>
+                                                        <binding destination="gol-Q4-5lU" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="XOX-86-1w2" id="4an-XB-gYJ"/>
                                                     </connections>
                                                 </tableView>
                                             </subviews>
@@ -800,7 +810,7 @@ CA
         <arrayController objectClassName="Message" id="gol-Q4-5lU" userLabel="Messages">
             <connections>
                 <binding destination="494" name="contentArray" keyPath="selectedFolder.messages" id="QjB-uU-Wp0"/>
-                <binding destination="494" name="sortDescriptors" keyPath="sortedMessages" id="8Sn-H2-oRq"/>
+                <binding destination="494" name="sortDescriptors" keyPath="sortedMessages" id="OR8-KE-4OR"/>
             </connections>
         </arrayController>
         <treeController objectClassName="" automaticallyPreparesContent="YES" childrenKeyPath="folders" leafKeyPath="isLeaf" id="AnL-EG-RYc">

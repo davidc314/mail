@@ -83,10 +83,11 @@
     self.selectedFolder = [[sender itemAtRow:[sender selectedRow]] representedObject];
 }
 
-- (IBAction)deleteMessage:(id)sender {
-    
-    NSIndexSet *indexSet = [self.arrayController selectionIndexes];
+- (IBAction)deleteMessage:(id)sender
+{
     NSArray *deletedMessages = [self.arrayController selectedObjects];
+    NSIndexSet *indexSet = [self.arrayController selectionIndexes];
+    
     MCOIndexSet *deleteUids = [MCOIndexSet indexSet];
     
     [self.inboxTable removeRowsAtIndexes:indexSet withAnimation: NSTableViewAnimationSlideRight];
@@ -95,17 +96,18 @@
     for (Message *deleteMessage in deletedMessages) {
         [deleteUids addIndex:[deleteMessage uid]];
     }
-    
-    MCOIMAPOperation *delete = [[self.selectedAccount imapSession] storeFlagsOperationWithFolder:@"INBOX"
+   
+    MCOIMAPOperation *delete = [[self.selectedAccount imapSession] storeFlagsOperationWithFolder:self.selectedFolder.path
                                                             uids:deleteUids
                                                             kind:MCOIMAPStoreFlagsRequestKindAdd
                                                             flags:MCOMessageFlagDeleted];
     
     [delete start:^(NSError *delError){
         if(!delError) {
-            MCOIMAPOperation *expungeOp = [[self.selectedAccount imapSession] expungeOperation:@"INBOX"];
+            MCOIMAPOperation *expungeOp = [[self.selectedAccount imapSession] expungeOperation:self.selectedFolder.path];
             [expungeOp start:^(NSError *expError) {
                 if(!expError) {
+                    NSLog(@"Delete sucessful");
                 }
             }];
         }

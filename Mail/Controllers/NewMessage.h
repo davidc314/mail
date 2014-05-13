@@ -29,7 +29,9 @@
 /** Tableau des pièces jointes contenues dans le message */
 @property (strong) NSMutableArray *attachments;
 @property (strong) NSArray *accounts;
+@property (weak) IBOutlet NSView *ccFieldsView;
 
 @property (strong) IBOutlet NSArrayController *arrayController;
 @property (weak) IBOutlet NSCollectionView *collectionView;
+
 @end
