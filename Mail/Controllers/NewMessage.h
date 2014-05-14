@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 /** Controlleur de l'interface de création d'un message */
-@interface NewMessage : NSWindowController
+@interface NewMessage : NSWindowController <NSCollectionViewDelegate>
 
 /** Champ de saisie pour [Message to] */
 @property (weak) IBOutlet NSTokenField *to;
@@ -32,6 +32,7 @@
 @property (weak) IBOutlet NSView *ccFieldsView;
 
 @property (strong) IBOutlet NSArrayController *arrayController;
-@property (weak) IBOutlet NSCollectionView *collectionView;
+@property (weak) IBOutlet NSCollectionView *attachmentCollectionView;
+@property (strong) IBOutlet NSMenu *attachmentContextMenu;
 
 @end

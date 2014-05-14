@@ -33,9 +33,12 @@
 {
     [super windowDidLoad];
     [self.ccFieldsView setHidden:YES];
-    [self.body registerForDraggedTypes:[NSArray arrayWithObjects:
-                                   NSColorPboardType, NSFilenamesPboardType, nil]];
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    
+    NSArray *supportedTypes = [NSArray arrayWithObjects: NSFilenamesPboardType, nil];
+    [self.attachmentCollectionView registerForDraggedTypes:supportedTypes];
+    
+    [self.attachmentCollectionView setDraggingSourceOperationMask:NSDragOperationCopy forLocal:NO];
+    [self.attachmentCollectionView setDraggingSourceOperationMask:NSDragOperationMove forLocal:YES];
 }
 - (IBAction)attachment:(id)sender {
     NSOpenPanel *openPanel = [[NSOpenPanel alloc] init];
@@ -80,7 +83,7 @@
     id objectInClickedView = nil;
     
     for( int i = 0; i < [self.attachments count]; i++ ) {
-        NSCollectionViewItem *viewItem = [self.collectionView itemAtIndex:i];
+        NSCollectionViewItem *viewItem = [self.attachmentCollectionView itemAtIndex:i];
         
         if( [sender isDescendantOf:[viewItem view]] ) {
             objectInClickedView = [self.attachments objectAtIndex:i];
@@ -92,17 +95,55 @@
 - (void) doubleClick:(id) sender {
     NSLog(@"Attachment %@",sender);
 }
--(void)dropAttachment:(id) sender
+-(void)dropAttachment:(id)sender
 {
+    NSLog(@"Drop");
     NSPasteboard *pboard = [sender draggingPasteboard];
     NSArray *filenames = [pboard propertyListForType:NSFilenamesPboardType];
     
     for (NSString *fileName in filenames) {
         NSInteger fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:fileName error:NULL] fileSize];
-        Attachment *a = [[Attachment alloc] initWithName:[[NSURL URLWithString:fileName] lastPathComponent]  size:fileSize data:[NSData dataWithContentsOfFile:fileName]];
+        Attachment *a = [[Attachment alloc] initWithName:[[NSURL fileURLWithPath:fileName] lastPathComponent]  size:fileSize data:[NSData dataWithContentsOfFile:fileName]];
         [self.attachments addObject:a];
         NSLog(@"Attachments :%@",self.attachments);
         self.attachments = self.attachments;
     }
 }
+-(BOOL)collectionView:(NSCollectionView *)collectionView acceptDrop:(id<NSDraggingInfo>)draggingInfo index:(NSInteger)index dropOperation:(NSCollectionViewDropOperation)dropOperation
+{
+    [self dropAttachment:draggingInfo];
+    return YES;
+}
+
+- (NSDragOperation)collectionView:(NSCollectionView *)collectionView validateDrop:(id<NSDraggingInfo>)draggingInfo proposedIndex:(NSInteger *)proposedDropIndex dropOperation:(NSCollectionViewDropOperation *)proposedDropOperation
+{
+    return NSDragOperationCopy;
+}
+- (IBAction)removeAttachments:(id)sender {
+    NSLog(@"Remove");
+    for (Attachment *attachment in [[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]]) {
+        [self.attachments removeObject:attachment];
+    }
+    self.attachments = self.attachments;
+}
+- (void) rightClicked:(id)sender event:(NSEvent *)event
+{
+    NSLog(@"Right clicked");
+    // Multiple selection
+    if (self.attachmentCollectionView.selectionIndexes.count > 1) {
+        
+        if (![[self.attachmentCollectionView selectionIndexes] containsIndex:[[self.attachmentCollectionView subviews] indexOfObject:[sender view]]]) {
+            [self.attachmentCollectionView setSelectionIndexes:[NSIndexSet indexSet]];
+            [sender setSelected:YES];
+        }
+    }
+    
+    // Single selection
+    else {
+        [self.attachmentCollectionView setSelectionIndexes:[NSIndexSet indexSet]];
+        [sender setSelected:YES];
+    }
+    [NSMenu popUpContextMenu:self.attachmentContextMenu withEvent:event forView:[sender view]];
+}
+
 @end
