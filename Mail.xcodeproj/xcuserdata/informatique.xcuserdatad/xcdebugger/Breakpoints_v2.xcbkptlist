@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mail/Models/Message.h"
-            timestampString = "421247876.785814"
+            timestampString = "421916919.8157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "@interface Message"
             landmarkType = "2">
          </BreakpointContent>

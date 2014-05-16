@@ -22,14 +22,14 @@
 }
 
 
--  (id)initBuildMessageWithTo: (NSArray *)to CC:(NSArray *)cc BCC:(NSArray *)bcc Subject:(NSString *)subject Body:(NSString *)body
+-  (id)initBuildMessageWithTo: (NSArray *)to subject:(NSString *)subject body:(NSString *)body attachments:(NSMutableArray *)attachments
 {
     self = [super init];
     _to = to;
-    _bcc = bcc;
-    _cc = cc;
     _subject = subject;
     _htmlBody = body;
+    _attachments = attachments;
+    
     return self;
 }
 
@@ -125,28 +125,30 @@
     }];
 }
 
-/*
+
 //Send new message
-- (void) sendMessage {
-    ConnectionManager *connection = [ConnectionManager sharedManager];
+- (void) sendMessageFromAccount:(Account *)account {
+
     
     MCOMessageBuilder * builder = [[MCOMessageBuilder alloc] init];
     
-    [[builder header] setFrom:[MCOAddress addressWithDisplayName:nil mailbox:connection.smtpSession.username]];
+    [[builder header] setFrom:[MCOAddress addressWithDisplayName:nil mailbox:account.smtpSession.username]];
     [[builder header] setTo:self.to];
-    [[builder header] setCc:self.cc];
-    [[builder header] setBcc:self.bcc];
     [[builder header] setSubject:self.subject];
     [builder setHTMLBody:self.htmlBody];
     
+    for (Attachment *attachment in self.attachments) {
+        [builder addAttachment:[MCOAttachment attachmentWithData:attachment.data filename:attachment.name]];
+    }
+    
     NSData * rfc822Data = [builder data];
     
-    MCOSMTPSendOperation *sendOperation = [connection.smtpSession sendOperationWithData:rfc822Data];
+    MCOSMTPSendOperation *sendOperation = [account.smtpSession sendOperationWithData:rfc822Data];
     [sendOperation start:^(NSError *error) {
         NSLog(@"Message send");
     }];
 }
- */
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"%@/%@",self.from,self.subject];

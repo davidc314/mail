@@ -9,7 +9,8 @@
                 <outlet property="arrayController" destination="J8A-yS-6nh" id="Bxe-MG-3aP"/>
                 <outlet property="attachmentCollectionView" destination="zYx-18-IXB" id="xGb-bI-nJV"/>
                 <outlet property="attachmentContextMenu" destination="Xqj-Kh-XBv" id="hFo-Lv-glW"/>
-                <outlet property="subject" destination="Xky-xb-nSH" id="evh-NS-L44"/>
+                <outlet property="body" destination="rep-Qq-Zco" id="Uxz-2f-f3G"/>
+                <outlet property="subject" destination="vDN-Ru-Qwn" id="XT6-vh-pJb"/>
                 <outlet property="to" destination="tYQ-FL-ozu" id="pjU-vp-AGC"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>
@@ -157,15 +158,6 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </tokenFieldCell>
                             </tokenField>
-                            <tokenField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xky-xb-nSH">
-                                <rect key="frame" x="87" y="12" width="431" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <tokenFieldCell key="cell" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" drawsBackground="YES" allowsEditingTextAttributes="YES" id="DeM-QX-CCs">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </tokenFieldCell>
-                            </tokenField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gBk-EY-tSw">
                                 <rect key="frame" x="577" y="8" width="205" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -186,16 +178,25 @@
                                 <connections>
                                     <binding destination="YSt-96-b3s" name="content" keyPath="arrangedObjects" id="X2e-Ts-pKf"/>
                                     <binding destination="YSt-96-b3s" name="contentValues" keyPath="arrangedObjects.name" previousBinding="X2e-Ts-pKf" id="ktv-Zo-vXB"/>
+                                    <binding destination="-2" name="selectedObject" keyPath="selectedAccount" previousBinding="ktv-Zo-vXB" id="1sc-hq-h3I"/>
                                 </connections>
                             </popUpButton>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vDN-Ru-Qwn">
+                                <rect key="frame" x="86" y="9" width="432" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="6jj-B0-5IS">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Xky-xb-nSH" firstAttribute="top" secondItem="tYQ-FL-ozu" secondAttribute="bottom" constant="3" id="08u-4v-E48"/>
-                            <constraint firstItem="tzW-T4-Xmt" firstAttribute="leading" secondItem="Xky-xb-nSH" secondAttribute="trailing" constant="8" id="4Ce-dm-GDX"/>
-                            <constraint firstItem="Xky-xb-nSH" firstAttribute="leading" secondItem="I8t-j8-xwM" secondAttribute="trailing" constant="9" id="8DC-oI-fpY"/>
                             <constraint firstItem="83b-56-gor" firstAttribute="leading" secondItem="VFu-Zs-MTq" secondAttribute="leading" constant="50" id="GXh-lr-1NK"/>
                             <constraint firstItem="gBk-EY-tSw" firstAttribute="top" secondItem="tYQ-FL-ozu" secondAttribute="bottom" constant="5" id="Gib-6X-eQo"/>
+                            <constraint firstItem="tzW-T4-Xmt" firstAttribute="leading" secondItem="vDN-Ru-Qwn" secondAttribute="trailing" constant="8" id="QY8-EZ-pyI"/>
                             <constraint firstItem="tYQ-FL-ozu" firstAttribute="leading" secondItem="83b-56-gor" secondAttribute="trailing" constant="8" id="QZ6-fx-nKM"/>
+                            <constraint firstItem="vDN-Ru-Qwn" firstAttribute="leading" secondItem="I8t-j8-xwM" secondAttribute="trailing" constant="8" id="RoP-PA-6M4"/>
                             <constraint firstAttribute="trailing" secondItem="gBk-EY-tSw" secondAttribute="trailing" constant="20" id="SDE-GV-SPx"/>
                             <constraint firstAttribute="height" constant="75" id="Vcq-2k-IdX"/>
                             <constraint firstItem="gBk-EY-tSw" firstAttribute="leading" secondItem="tzW-T4-Xmt" secondAttribute="trailing" constant="8" id="djY-xd-wwn"/>
@@ -203,6 +204,7 @@
                             <constraint firstItem="83b-56-gor" firstAttribute="top" secondItem="VFu-Zs-MTq" secondAttribute="top" constant="18" id="gK6-q0-5Uj"/>
                             <constraint firstAttribute="trailing" secondItem="tYQ-FL-ozu" secondAttribute="trailing" constant="21" id="hR2-kY-1jN"/>
                             <constraint firstItem="I8t-j8-xwM" firstAttribute="leading" secondItem="VFu-Zs-MTq" secondAttribute="leading" constant="19" id="jwC-vw-kdd"/>
+                            <constraint firstItem="vDN-Ru-Qwn" firstAttribute="top" secondItem="tYQ-FL-ozu" secondAttribute="bottom" constant="6" id="qcO-bc-p4M"/>
                             <constraint firstItem="I8t-j8-xwM" firstAttribute="top" secondItem="83b-56-gor" secondAttribute="bottom" constant="9" id="rRX-am-xdd"/>
                             <constraint firstItem="tYQ-FL-ozu" firstAttribute="top" secondItem="VFu-Zs-MTq" secondAttribute="top" constant="16" id="uZ1-UI-io5"/>
                         </constraints>
@@ -217,6 +219,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="send:" target="-2" id="zpU-5H-9g1"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

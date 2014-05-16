@@ -96,6 +96,8 @@
 		7375F7D9190F849A0076BF69 /* opened_folder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7D8190F849A0076BF69 /* opened_folder.pdf */; };
 		7375F7DF190F8A4D0076BF69 /* save.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7DE190F8A4D0076BF69 /* save.pdf */; };
 		7389B1401920C28200C84A5A /* UpperCaseValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */; };
+		73995E161924F3C800E70670 /* AttachmentCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73995E151924F3C800E70670 /* AttachmentCollectionView.m */; };
+		73995E1D1924F77300E70670 /* sendTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73995E1C1924F77300E70670 /* sendTemplate.pdf */; };
 		739ABA0418F2918800EBD5F8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739ABA0318F2918800EBD5F8 /* MainMenu.xib */; };
 		73ADEF7C1920F9BE004BE462 /* attachmentButtonTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73ADEF7B1920F9BE004BE462 /* attachmentButtonTemplate.pdf */; };
 		73BB96811913BC2C003EBEC7 /* forward_buttonTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73BB967F1913BC2C003EBEC7 /* forward_buttonTemplate.pdf */; };
@@ -265,6 +267,9 @@
 		7375F7DE190F8A4D0076BF69 /* save.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = save.pdf; path = Resources/save.pdf; sourceTree = "<group>"; };
 		7389B13E1920C28200C84A5A /* UpperCaseValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpperCaseValueTransformer.h; sourceTree = "<group>"; };
 		7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpperCaseValueTransformer.m; sourceTree = "<group>"; };
+		73995E141924F3C800E70670 /* AttachmentCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentCollectionView.h; sourceTree = "<group>"; };
+		73995E151924F3C800E70670 /* AttachmentCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentCollectionView.m; sourceTree = "<group>"; };
+		73995E1C1924F77300E70670 /* sendTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = sendTemplate.pdf; path = Resources/sendTemplate.pdf; sourceTree = "<group>"; };
 		739ABA0318F2918800EBD5F8 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		73ADEF7B1920F9BE004BE462 /* attachmentButtonTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = attachmentButtonTemplate.pdf; path = Resources/attachmentButtonTemplate.pdf; sourceTree = "<group>"; };
 		73BB967F1913BC2C003EBEC7 /* forward_buttonTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = forward_buttonTemplate.pdf; path = Resources/forward_buttonTemplate.pdf; sourceTree = "<group>"; };
@@ -305,6 +310,7 @@
 				73BB96831913BF8C003EBEC7 /* deleteTemplate.pdf */,
 				734EC4D218F2CD3400DD1B2A /* folders */,
 				7374E1DF18E96E2600741BE2 /* bar.png */,
+				73995E1C1924F77300E70670 /* sendTemplate.pdf */,
 				73C40AE4190E564F0007C2BE /* attachmentTemplate.pdf */,
 				7313087618F570BC00243913 /* forwardTemplate.pdf */,
 				7313087818F570C300243913 /* replyTemplate.pdf */,
@@ -393,6 +399,8 @@
 		731FE27418A36BDF00715E68 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				73995E141924F3C800E70670 /* AttachmentCollectionView.h */,
+				73995E151924F3C800E70670 /* AttachmentCollectionView.m */,
 				7303DE5B191262D300404E5C /* AttachmentView.h */,
 				7303DE5C191262D300404E5C /* AttachmentView.m */,
 				73298F4118E18FB500E05756 /* FormatView.h */,
@@ -718,6 +726,7 @@
 				731812E018F8246F008E6D44 /* icon_256x256.png in Resources */,
 				73202CFF18ED3BD500F0594B /* closedmail_512x512.png in Resources */,
 				73202CFC18ED3BD500F0594B /* closedmail_64x64.png in Resources */,
+				73995E1D1924F77300E70670 /* sendTemplate.pdf in Resources */,
 				6367D03018AD4A9700B60DF4 /* NewMessage.xib in Resources */,
 				7313087718F570BC00243913 /* forwardTemplate.pdf in Resources */,
 				7313086C18F51AA900243913 /* inbox.pdf in Resources */,
@@ -796,6 +805,7 @@
 				7374E1E318E9830F00741BE2 /* MessageRowView.m in Sources */,
 				73298F4A18E1B89F00E05756 /* fileSizeTransformer.m in Sources */,
 				6367D01618AD457E00B60DF4 /* SearchField.m in Sources */,
+				73995E161924F3C800E70670 /* AttachmentCollectionView.m in Sources */,
 				7303DE5F191262D300404E5C /* AttachmentView.m in Sources */,
 				6367D02218AD4A4B00B60DF4 /* Account.m in Sources */,
 				736094211896744D00E664B4 /* main.m in Sources */,

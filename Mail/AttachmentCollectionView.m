@@ -40,8 +40,11 @@
 }
 - (void)keyDown:(NSEvent *)theEvent
 {
-    if([self.delegate respondsToSelector:@selector(deleteAttachments)]) {
-        [(id<AttachmentCollectionViewDelegate>)self.delegate deleteAttachments];
+    if([[theEvent charactersIgnoringModifiers] characterAtIndex:0] == NSDeleteCharacter
+       || [[theEvent charactersIgnoringModifiers] characterAtIndex:0] == NSDeleteFunctionKey) {
+        if([self.delegate respondsToSelector:@selector(deleteAttachments)]) {
+            [(id<AttachmentCollectionViewDelegate>)self.delegate deleteAttachments];
+        }
     }
 }
 @end

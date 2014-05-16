@@ -30,12 +30,6 @@
 /** Destinataires */
 @property (strong) NSArray  *to;
 
-/** Destinataires copies */
-@property (strong) NSArray  *cc;
-
-/** Destinataires copies cachées*/
-@property (strong) NSArray  *bcc;
-
 /** Sujet */
 @property (strong) NSString  *subject;
 
@@ -85,11 +79,11 @@
  
  @return Le message prêt à être envoyé
  */
-- (id)initBuildMessageWithTo: (NSArray *)to CC:(NSArray *)cc BCC:(NSArray *)bcc Subject:(NSString *)subject Body:(NSString *)body;
+-  (id)initBuildMessageWithTo: (NSArray *)to subject:(NSString *)subject body:(NSString *)body attachments:(NSMutableArray *)attachments;
 
 /*!
  Envoie un message correctement instancié
  */
-- (void)sendMessage;
+- (void) sendMessageFromAccount:(Account *)account;
 
 @end

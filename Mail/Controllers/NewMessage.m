@@ -26,6 +26,7 @@
     
     _attachments = [NSMutableArray array];
     self.accounts = [[AccountsManager sharedManager] accounts];
+    self.selectedAccount = self.accounts[0];
     return self;
 }
 
@@ -59,15 +60,11 @@
 
 - (IBAction)send:(id)sender {
     NSArray *to = [self.to.stringValue componentsSeparatedByString:delimiterString];
-    NSArray *cc = [self.cc.stringValue componentsSeparatedByString:delimiterString];
-    NSArray *bcc = [self.bcc.stringValue componentsSeparatedByString:delimiterString];
     
     to = [self convertStringToMCOAdress:to];
-    cc = [self convertStringToMCOAdress:cc];
-    bcc = [self convertStringToMCOAdress:bcc];
     
-    Message *message = [[Message alloc] initBuildMessageWithTo:to CC:cc BCC:bcc Subject:self.subject.stringValue Body:self.body.string];
-    [message sendMessage];
+    Message *message = [[Message alloc] initBuildMessageWithTo:to subject:self.subject.stringValue body:self.body.string attachments:self.attachments];
+    [message sendMessageFromAccount:self.selectedAccount];
 }
 
 - (NSMutableArray *) convertStringToMCOAdress:(NSArray *) stringArray {
@@ -78,20 +75,7 @@
     }
     return mcoAddressArray;
 }
--(IBAction)removeAttachmentItem:(id)sender
-{
-    id objectInClickedView = nil;
-    
-    for( int i = 0; i < [self.attachments count]; i++ ) {
-        NSCollectionViewItem *viewItem = [self.attachmentCollectionView itemAtIndex:i];
-        
-        if( [sender isDescendantOf:[viewItem view]] ) {
-            objectInClickedView = [self.attachments objectAtIndex:i];
-        }
-    }
-    [self.attachments removeObject:objectInClickedView];
-    self.attachments = self.attachments;
-}
+
 - (void) doubleClick:(id) sender {
     NSLog(@"Attachment %@",sender);
 }
@@ -105,6 +89,7 @@
         NSInteger fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:fileName error:NULL] fileSize];
         Attachment *a = [[Attachment alloc] initWithName:[[NSURL fileURLWithPath:fileName] lastPathComponent]  size:fileSize data:[NSData dataWithContentsOfFile:fileName]];
         [self.attachments addObject:a];
+        self.attachmentCollectionView.hasAttachment = YES;
         NSLog(@"Attachments :%@",self.attachments);
         self.attachments = self.attachments;
     }
@@ -124,7 +109,13 @@
     for (Attachment *attachment in [[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]]) {
         [self.attachments removeObject:attachment];
     }
+    if (self.attachments.count == 0) {
+        self.attachmentCollectionView.hasAttachment = NO;
+    }
     self.attachments = self.attachments;
+}
+- (void) deleteAttachments {
+    [self removeAttachments:nil];
 }
 - (void) rightClicked:(id)sender event:(NSEvent *)event
 {

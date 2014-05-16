@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 @protocol AttachmentCollectionViewDelegate <NSObject>
+- (void) deleteAttachments;
 @end
 @interface AttachmentCollectionView : NSCollectionView
 
