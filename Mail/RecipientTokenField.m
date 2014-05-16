@@ -14,7 +14,6 @@
 {
     self = [super initWithCoder:aDecoder];
     
-    NSLog(@"Init token field");
     if (self) {
         // Initialization code here.
         NSCharacterSet *tokenizingCharSet = [NSCharacterSet characterSetWithCharactersInString:@";"];

@@ -11,18 +11,12 @@
 #import "Attachment.h"
 #import "AccountsManager.h"
 
-@implementation NewMessage {
-    NSString *delimiterString;
-}
+@implementation NewMessage
 
 - (id)init
 {
     self = [super initWithWindowNibName:@"NewMessage"];
     [self showWindow:self];
-    delimiterString = @";";
-    
-    NSCharacterSet *tokenizingCharSet = [NSCharacterSet characterSetWithCharactersInString:delimiterString];
-    //[_to setTokenizingCharacterSet:tokenizingCharSet];
     
     _attachments = [NSMutableArray array];
     self.accounts = [[AccountsManager sharedManager] accounts];
@@ -58,20 +52,41 @@
 }
 
 - (IBAction)send:(id)sender {
-    NSArray *to = [self.to.stringValue componentsSeparatedByString:delimiterString];
-    
+    NSArray *to = self.to.objectValue;
+
     to = [self convertStringToMCOAdress:to];
+    Message *message = [[Message alloc] initBuildMessageWithTo:to subject:self.subject.stringValue body:self.body.string attachments:self.attachments];
     
-    if ([self.to.stringValue isEqualToString:@""]) {
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert setMessageText:@"Please enter a recipient"];
-        [alert runModal];
+    if ([self.subject.stringValue isEqualToString:@""]) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Send message without subject ?" defaultButton:@"Yes" alternateButton:@"No" otherButton:nil informativeTextWithFormat:@""];
+        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+            if(returnCode == NSModalResponseOK) {
+                [self sendMessage:message];
+            }
+        }];
     }
     else {
-        Message *message = [[Message alloc] initBuildMessageWithTo:to subject:self.subject.stringValue body:self.body.string attachments:self.attachments];
-        [message sendMessageFromAccount:self.selectedAccount];
-        [self.window close];
+        [self sendMessage:message];
     }
+    
+   
+}
+- (void) sendMessage:(Message *)message
+{
+    [message sendMessageFromAccount:self.selectedAccount];
+    [self sendNotification:@"Message sent"];
+    [self.window close];
+}
+- (void) sendNotification:(NSString *)message
+{
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    [notification setTitle:message];
+    [notification setSubtitle:self.subject.stringValue];
+    [notification setSoundName:NSUserNotificationDefaultSoundName];
+    
+    NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
+    [center setDelegate:self];
+    [center deliverNotification:notification];
 }
 
 - (NSMutableArray *) convertStringToMCOAdress:(NSArray *) stringArray {
@@ -142,6 +157,11 @@
         [sender setSelected:YES];
     }
     [NSMenu popUpContextMenu:self.attachmentContextMenu withEvent:event forView:[sender view]];
+}
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
+     shouldPresentNotification:(NSUserNotification *)notification
+{
+    return YES;
 }
 
 @end

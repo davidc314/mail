@@ -12,7 +12,7 @@
 @class Account;
 
 /** Controlleur de l'interface de création d'un message */
-@interface NewMessage : NSWindowController <NSCollectionViewDelegate>
+@interface NewMessage : NSWindowController <NSCollectionViewDelegate,NSUserNotificationCenterDelegate>
 
 /** Champ de saisie pour [Message to] */
 @property (weak) IBOutlet RecipientTokenField *to;
