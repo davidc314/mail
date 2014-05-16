@@ -10,6 +10,7 @@
                 <outlet property="attachmentCollectionView" destination="zYx-18-IXB" id="xGb-bI-nJV"/>
                 <outlet property="attachmentContextMenu" destination="Xqj-Kh-XBv" id="hFo-Lv-glW"/>
                 <outlet property="body" destination="rep-Qq-Zco" id="Uxz-2f-f3G"/>
+                <outlet property="sendButton" destination="u1o-qw-URr" id="asn-Wo-NbH"/>
                 <outlet property="subject" destination="vDN-Ru-Qwn" id="XT6-vh-pJb"/>
                 <outlet property="to" destination="tYQ-FL-ozu" id="pjU-vp-AGC"/>
                 <outlet property="window" destination="1" id="3"/>
@@ -140,7 +141,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tzW-T4-Xmt">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tzW-T4-Xmt" userLabel="Text Field - From :">
                                 <rect key="frame" x="524" y="15" width="49" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="From : " id="5nK-vC-dlf">
@@ -149,7 +150,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <tokenField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tYQ-FL-ozu">
+                            <tokenField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tYQ-FL-ozu" customClass="RecipientTokenField">
                                 <rect key="frame" x="86" y="37" width="692" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <tokenFieldCell key="cell" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" drawsBackground="YES" allowsEditingTextAttributes="YES" id="ivi-jn-wjV">
@@ -221,6 +222,7 @@
                         </buttonCell>
                         <connections>
                             <action selector="send:" target="-2" id="zpU-5H-9g1"/>
+                            <binding destination="-2" name="enabled" keyPath="to.empty" id="jHo-ax-sdG"/>
                         </connections>
                     </button>
                 </subviews>
@@ -327,6 +329,7 @@
                 <outlet property="delegate" destination="PR9-xm-KUl" id="lKF-7c-n7c"/>
             </connections>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="JZD-Pe-dkD"/>
     </objects>
     <resources>
         <image name="NSApplicationIcon" width="128" height="128"/>

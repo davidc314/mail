@@ -145,8 +145,23 @@
     
     MCOSMTPSendOperation *sendOperation = [account.smtpSession sendOperationWithData:rfc822Data];
     [sendOperation start:^(NSError *error) {
-        NSLog(@"Message send");
+        NSUserNotification *notification = [[NSUserNotification alloc] init];
+        [notification setSubtitle:self.subject];
+        [notification setSoundName:NSUserNotificationDefaultSoundName];
+        
+        if(!error) {
+            NSLog(@"Message send");
+            [notification setTitle:@"Message send"];
+        }
+        else {
+            NSLog(@"Message not send");
+            [notification setTitle:@"Message not send"];
+        }
+        NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
+        [center deliverNotification:notification];
+        
     }];
+    
 }
 
 - (NSString *)description

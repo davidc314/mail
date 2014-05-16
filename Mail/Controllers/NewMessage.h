@@ -8,13 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 #import "AttachmentCollectionView.h"
+#import "RecipientTokenField.h"
 @class Account;
 
 /** Controlleur de l'interface de création d'un message */
 @interface NewMessage : NSWindowController <NSCollectionViewDelegate>
 
 /** Champ de saisie pour [Message to] */
-@property (weak) IBOutlet NSTokenField *to;
+@property (weak) IBOutlet RecipientTokenField *to;
 
 /** Champ de saisie pour [Message subject] */
 @property (weak) IBOutlet NSTextField *subject;

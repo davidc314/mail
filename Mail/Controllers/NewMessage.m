@@ -22,7 +22,7 @@
     delimiterString = @";";
     
     NSCharacterSet *tokenizingCharSet = [NSCharacterSet characterSetWithCharactersInString:delimiterString];
-    [_to setTokenizingCharacterSet:tokenizingCharSet];
+    //[_to setTokenizingCharacterSet:tokenizingCharSet];
     
     _attachments = [NSMutableArray array];
     self.accounts = [[AccountsManager sharedManager] accounts];
@@ -55,7 +55,6 @@
         self.attachments = [[self.attachments arrayByAddingObject:attachment] mutableCopy];
     };
     
-    
 }
 
 - (IBAction)send:(id)sender {
@@ -63,8 +62,16 @@
     
     to = [self convertStringToMCOAdress:to];
     
-    Message *message = [[Message alloc] initBuildMessageWithTo:to subject:self.subject.stringValue body:self.body.string attachments:self.attachments];
-    [message sendMessageFromAccount:self.selectedAccount];
+    if ([self.to.stringValue isEqualToString:@""]) {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:@"Please enter a recipient"];
+        [alert runModal];
+    }
+    else {
+        Message *message = [[Message alloc] initBuildMessageWithTo:to subject:self.subject.stringValue body:self.body.string attachments:self.attachments];
+        [message sendMessageFromAccount:self.selectedAccount];
+        [self.window close];
+    }
 }
 
 - (NSMutableArray *) convertStringToMCOAdress:(NSArray *) stringArray {
