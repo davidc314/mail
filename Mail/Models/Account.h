@@ -11,15 +11,27 @@
 
 @interface Account : NSObject <NSCoding>
 
+/** Nom du compte */
 @property (strong) NSString  *name;
+
+/** L'adresse email */
 @property (strong,nonatomic) NSString  *mail;
 
+/* @name IMAP */
+
+/** Le nom d'utilisateur de la session IMAP */
 @property (strong) NSString  *imapUsername;
+
+/** Le mot de passe de la session IMAP */
 @property (strong) NSString  *imapPassword;
 
+/** L'adresse du serveur IMAP */
 @property (strong) NSString  *imapHostname;
+
 @property (assign) int  imapPort;
 @property (assign) MCOConnectionType imapConnectionType;
+
+/* @name SMTP */
 
 @property (strong) NSString  *smtpUsername;
 @property (strong) NSString  *smtpPassword;

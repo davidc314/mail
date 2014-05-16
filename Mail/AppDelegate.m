@@ -56,8 +56,6 @@
     [self.search bind:@"predicate" toObject:self.arrayController withKeyPath:@"filterPredicate" options:@{NSPredicateFormatBindingOption: @"from contains[cd] $value || subject contains[cd] $value"}];
     [self.inboxTable setDoubleAction:@selector(doubleClicked)];
     
-    [self.progress setHidden:YES];
-    
     [self.treeController rearrangeObjects];
 }
 

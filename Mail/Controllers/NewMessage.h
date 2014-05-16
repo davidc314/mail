@@ -23,15 +23,22 @@
 /** Champ de saisie pour [Message htmlBody] */
 @property (strong) IBOutlet NSTextView *body;
 
+/** Le compte à partir duquel on envoie le message */
 @property (strong) Account *selectedAccount;
 
 /** Tableau des pièces jointes contenues dans le message */
 @property (strong) NSMutableArray *attachments;
-@property (strong) NSArray *accounts;
-@property (weak) IBOutlet NSView *ccFieldsView;
 
-@property (strong) IBOutlet NSArrayController *arrayController;
-@property (weak) IBOutlet AttachmentCollectionView *attachmentCollectionView;
+/** Les comptes à lister dans le menu déroulant */
+@property (strong) NSArray *accounts;
+
+/** Controlleur pour le tableau des comptes */
+@property (strong) IBOutlet NSArrayController *accountsArrayController;
+
+/** Vue personnalisée pour représenter les pièces jointes */
+@property (weak) IBOutlet AttachmentCollectionView *attachmentsCollectionView;
+
+/** Menu contextuel pour une pièce jointe */
 @property (strong) IBOutlet NSMenu *attachmentContextMenu;
 
 @end

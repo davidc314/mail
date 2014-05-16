@@ -6,9 +6,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NewMessage">
             <connections>
-                <outlet property="arrayController" destination="J8A-yS-6nh" id="Bxe-MG-3aP"/>
-                <outlet property="attachmentCollectionView" destination="zYx-18-IXB" id="xGb-bI-nJV"/>
+                <outlet property="accountsArrayController" destination="J8A-yS-6nh" id="geK-5t-EKI"/>
                 <outlet property="attachmentContextMenu" destination="Xqj-Kh-XBv" id="hFo-Lv-glW"/>
+                <outlet property="attachmentsCollectionView" destination="zYx-18-IXB" id="JS7-BJ-0hN"/>
                 <outlet property="body" destination="rep-Qq-Zco" id="Uxz-2f-f3G"/>
                 <outlet property="sendButton" destination="u1o-qw-URr" id="asn-Wo-NbH"/>
                 <outlet property="subject" destination="vDN-Ru-Qwn" id="XT6-vh-pJb"/>
@@ -177,9 +177,9 @@
                                     </menu>
                                 </popUpButtonCell>
                                 <connections>
-                                    <binding destination="YSt-96-b3s" name="content" keyPath="arrangedObjects" id="X2e-Ts-pKf"/>
-                                    <binding destination="YSt-96-b3s" name="contentValues" keyPath="arrangedObjects.name" previousBinding="X2e-Ts-pKf" id="ktv-Zo-vXB"/>
-                                    <binding destination="-2" name="selectedObject" keyPath="selectedAccount" previousBinding="ktv-Zo-vXB" id="1sc-hq-h3I"/>
+                                    <binding destination="YSt-96-b3s" name="content" keyPath="arrangedObjects" id="zag-jl-ukh"/>
+                                    <binding destination="YSt-96-b3s" name="contentValues" keyPath="arrangedObjects.name" previousBinding="zag-jl-ukh" id="cRS-u8-lez"/>
+                                    <binding destination="-2" name="selectedObject" keyPath="selectedAccount" previousBinding="cRS-u8-lez" id="Sg7-rq-hSs"/>
                                 </connections>
                             </popUpButton>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vDN-Ru-Qwn">
@@ -211,12 +211,12 @@
                         </constraints>
                     </customView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u1o-qw-URr">
-                        <rect key="frame" x="759" y="8" width="30" height="25"/>
+                        <rect key="frame" x="714" y="8" width="75" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="xAS-4b-4J0"/>
+                            <constraint firstAttribute="width" constant="75" id="iUZ-bj-es8"/>
                         </constraints>
-                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="sendTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X1S-B8-Ecd">
+                        <buttonCell key="cell" type="roundTextured" title="Send" bezelStyle="texturedRounded" image="sendTemplate" imagePosition="left" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X1S-B8-Ecd">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">

@@ -27,13 +27,12 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-    [self.ccFieldsView setHidden:YES];
     
     NSArray *supportedTypes = [NSArray arrayWithObjects: NSFilenamesPboardType, nil];
-    [self.attachmentCollectionView registerForDraggedTypes:supportedTypes];
+    [self.attachmentsCollectionView registerForDraggedTypes:supportedTypes];
     
-    [self.attachmentCollectionView setDraggingSourceOperationMask:NSDragOperationCopy forLocal:NO];
-    [self.attachmentCollectionView setDraggingSourceOperationMask:NSDragOperationMove forLocal:YES];
+    [self.attachmentsCollectionView setDraggingSourceOperationMask:NSDragOperationCopy forLocal:NO];
+    [self.attachmentsCollectionView setDraggingSourceOperationMask:NSDragOperationMove forLocal:YES];
 }
 - (IBAction)attachment:(id)sender {
     NSOpenPanel *openPanel = [[NSOpenPanel alloc] init];
@@ -111,7 +110,7 @@
         NSInteger fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:fileName error:NULL] fileSize];
         Attachment *a = [[Attachment alloc] initWithName:[[NSURL fileURLWithPath:fileName] lastPathComponent]  size:fileSize data:[NSData dataWithContentsOfFile:fileName]];
         [self.attachments addObject:a];
-        self.attachmentCollectionView.hasAttachment = YES;
+        self.attachmentsCollectionView.hasAttachment = YES;
         NSLog(@"Attachments :%@",self.attachments);
         self.attachments = self.attachments;
     }
@@ -128,11 +127,11 @@
 }
 - (IBAction)removeAttachments:(id)sender {
     NSLog(@"Remove");
-    for (Attachment *attachment in [[self.attachmentCollectionView content] objectsAtIndexes:[self.attachmentCollectionView selectionIndexes]]) {
+    for (Attachment *attachment in [[self.attachmentsCollectionView content] objectsAtIndexes:[self.attachmentsCollectionView selectionIndexes]]) {
         [self.attachments removeObject:attachment];
     }
     if (self.attachments.count == 0) {
-        self.attachmentCollectionView.hasAttachment = NO;
+        self.attachmentsCollectionView.hasAttachment = NO;
     }
     self.attachments = self.attachments;
 }
@@ -143,17 +142,17 @@
 {
     NSLog(@"Right clicked");
     // Multiple selection
-    if (self.attachmentCollectionView.selectionIndexes.count > 1) {
+    if (self.attachmentsCollectionView.selectionIndexes.count > 1) {
         
-        if (![[self.attachmentCollectionView selectionIndexes] containsIndex:[[self.attachmentCollectionView subviews] indexOfObject:[sender view]]]) {
-            [self.attachmentCollectionView setSelectionIndexes:[NSIndexSet indexSet]];
+        if (![[self.attachmentsCollectionView selectionIndexes] containsIndex:[[self.attachmentsCollectionView subviews] indexOfObject:[sender view]]]) {
+            [self.attachmentsCollectionView setSelectionIndexes:[NSIndexSet indexSet]];
             [sender setSelected:YES];
         }
     }
     
     // Single selection
     else {
-        [self.attachmentCollectionView setSelectionIndexes:[NSIndexSet indexSet]];
+        [self.attachmentsCollectionView setSelectionIndexes:[NSIndexSet indexSet]];
         [sender setSelected:YES];
     }
     [NSMenu popUpContextMenu:self.attachmentContextMenu withEvent:event forView:[sender view]];

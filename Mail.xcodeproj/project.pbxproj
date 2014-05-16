@@ -91,6 +91,7 @@
 		7360943F1896744D00E664B4 /* MailTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7360943E1896744D00E664B4 /* MailTests.m */; };
 		7360945B1896749D00E664B4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7360945A1896749D00E664B4 /* Security.framework */; };
 		736D490F19260B4E001564C1 /* RecipientTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 736D490E19260B4E001564C1 /* RecipientTokenField.m */; };
+		736D491519263658001564C1 /* MailCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 732BB8231917631400328A4B /* MailCore.framework */; };
 		7374E1DA18E9400800741BE2 /* dateValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7374E1D918E9400800741BE2 /* dateValueTransformer.m */; };
 		7374E1E018E96E2600741BE2 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7374E1DF18E96E2600741BE2 /* bar.png */; };
 		7374E1E318E9830F00741BE2 /* MessageRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7374E1E218E9830F00741BE2 /* MessageRowView.m */; };
@@ -151,15 +152,23 @@
 			remoteGlobalIDString = 736094101896744D00E664B4;
 			remoteInfo = Mail;
 		};
+		736D49161926374C001564C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 732BB8121917631300328A4B /* mailcore2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C6BD288C170BD71100A91AC1;
+			remoteInfo = "mailcore osx";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7374E1E418E9960E00741BE2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				736D491519263658001564C1 /* MailCore.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +607,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				736D49171926374C001564C1 /* PBXTargetDependency */,
 			);
 			name = Mail;
 			productName = Mail;
@@ -834,6 +844,11 @@
 			isa = PBXTargetDependency;
 			target = 736094101896744D00E664B4 /* Mail */;
 			targetProxy = 736094361896744D00E664B4 /* PBXContainerItemProxy */;
+		};
+		736D49171926374C001564C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "mailcore osx";
+			targetProxy = 736D49161926374C001564C1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
