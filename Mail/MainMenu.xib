@@ -16,12 +16,6 @@
                 <menuItem title="Mail" id="7yx-02-aZn">
                     <menu key="submenu" title="Mail" systemMenu="apple" id="l9f-rw-Omn">
                         <items>
-                            <menuItem title="Refresh" keyEquivalent="" id="oAT-2U-DJ0">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="refresh:" target="494" id="eY3-Xh-ath"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="About Mail" id="Pkl-AF-61c">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
