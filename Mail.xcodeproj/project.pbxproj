@@ -65,7 +65,6 @@
 		73202CFE18ED3BD500F0594B /* closedmail_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CF718ED3BD500F0594B /* closedmail_256x256.png */; };
 		73202CFF18ED3BD500F0594B /* closedmail_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CF818ED3BD500F0594B /* closedmail_512x512.png */; };
 		73202D0018ED3BD500F0594B /* closedmail_1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CF918ED3BD500F0594B /* closedmail_1024x1024.png */; };
-		73298F4418E18FB500E05756 /* FormatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73298F4218E18FB500E05756 /* FormatView.m */; };
 		73298F4718E1A9E500E05756 /* Attachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 73298F4618E1A9E500E05756 /* Attachment.m */; };
 		73298F4A18E1B89F00E05756 /* fileSizeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 73298F4918E1B89F00E05756 /* fileSizeTransformer.m */; };
 		732BB8241917637600328A4B /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732BB8231917631400328A4B /* MailCore.framework */; };
@@ -229,8 +228,6 @@
 		73202CF718ED3BD500F0594B /* closedmail_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closedmail_256x256.png; path = Resources/logo/closedmail/closedmail_256x256.png; sourceTree = "<group>"; };
 		73202CF818ED3BD500F0594B /* closedmail_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closedmail_512x512.png; path = Resources/logo/closedmail/closedmail_512x512.png; sourceTree = "<group>"; };
 		73202CF918ED3BD500F0594B /* closedmail_1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closedmail_1024x1024.png; path = Resources/logo/closedmail/closedmail_1024x1024.png; sourceTree = "<group>"; };
-		73298F4118E18FB500E05756 /* FormatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatView.h; sourceTree = "<group>"; };
-		73298F4218E18FB500E05756 /* FormatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatView.m; sourceTree = "<group>"; };
 		73298F4518E1A9E500E05756 /* Attachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attachment.h; sourceTree = "<group>"; };
 		73298F4618E1A9E500E05756 /* Attachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attachment.m; sourceTree = "<group>"; };
 		73298F4818E1B89F00E05756 /* fileSizeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileSizeTransformer.h; sourceTree = "<group>"; };
@@ -417,8 +414,6 @@
 				73995E151924F3C800E70670 /* AttachmentCollectionView.m */,
 				7303DE5B191262D300404E5C /* AttachmentView.h */,
 				7303DE5C191262D300404E5C /* AttachmentView.m */,
-				73298F4118E18FB500E05756 /* FormatView.h */,
-				73298F4218E18FB500E05756 /* FormatView.m */,
 				6367D01218AD457E00B60DF4 /* SearchField.h */,
 				6367D01318AD457E00B60DF4 /* SearchField.m */,
 				6367D01418AD457E00B60DF4 /* SearchFieldCell.h */,
@@ -806,7 +801,6 @@
 				7303DE67191262EE00404E5C /* AttachmentItemViewController.m in Sources */,
 				6367D01718AD457E00B60DF4 /* SearchFieldCell.m in Sources */,
 				732F941E18E40B60008AC581 /* MessageHeaderView.m in Sources */,
-				73298F4418E18FB500E05756 /* FormatView.m in Sources */,
 				736094281896744D00E664B4 /* AppDelegate.m in Sources */,
 				6367D02F18AD4A9700B60DF4 /* NewMessage.m in Sources */,
 				6367D02D18AD4A9700B60DF4 /* MessageDetail.m in Sources */,

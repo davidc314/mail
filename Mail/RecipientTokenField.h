@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+/** Champs de text personnalisé pour la saisie des adresses mails */
 @interface RecipientTokenField : NSTokenField
+
+/** Champs vide */
 @property (assign) BOOL empty;
 @end

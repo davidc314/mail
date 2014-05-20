@@ -72,17 +72,17 @@
 /** Initialise un nouveau message à envoyé
  
  @param to Le ou les destinataires
- @param cc Le ou les destinataires des copies
- @param bcc Le ou les destinataires des copies cachées
  @param subject Le sujet
  @param body Le contenu du message
- 
+ @param attachments Le tableau des pièces jointes
  @return Le message prêt à être envoyé
  */
 -  (id)initBuildMessageWithTo: (NSArray *)to subject:(NSString *)subject body:(NSString *)body attachments:(NSMutableArray *)attachments;
 
 /*!
- Envoie un message correctement instancié
+ Envoie un message correctement instancié depuis un compte
+ 
+ @param account Le compte depuis lequel on transmet le message
  */
 - (void) sendMessageFromAccount:(Account *)account;
 

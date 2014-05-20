@@ -2,8 +2,8 @@
 //  ACSearchFieldCell.h
 //  AppCleaner
 //
-//  Created by Julien Ramseier on 23.12.13.
-//  Copyright (c) 2013 FreeMacSoft. All rights reserved.
+//  Created by Informatique on 17.03.14.
+//  Copyright (c) 2014 Informatique. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

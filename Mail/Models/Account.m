@@ -38,7 +38,7 @@
     
     return self;
 }
-
+/* Connection au serveur IMAP */
 - (void) connectToIMAP {
     self.imapSession = [[MCOIMAPSession alloc] init];
     
@@ -49,6 +49,7 @@
     [self.imapSession setConnectionType:self.imapConnectionType];
 }
 
+/* Connection au serveur SMTP */
 -(void) connectToSMTP {
     self.smtpSession = [[MCOSMTPSession alloc] init];
     
@@ -60,6 +61,7 @@
     [self.smtpSession setAuthType:MCOAuthTypeSASLPlain | MCOAuthTypeSASLLogin];
 }
 
+/* Initialisation d'un compte à partir de l'archive stockée */
 - (id) initWithCoder:(NSCoder *)decoder {
     self = [super init];
     if (!self) {

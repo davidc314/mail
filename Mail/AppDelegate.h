@@ -12,6 +12,7 @@
 #import "Account.h"
 #import "Folder.h"
 
+/** Classe principale dédié à la gestion de l'application */
 @interface AppDelegate : NSObject <NSApplicationDelegate,NSTableViewDataSource,NSTableViewDelegate,NSOutlineViewDelegate>
 
 /** La fenêtre principale de l'interface */
