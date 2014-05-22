@@ -46,4 +46,5 @@
  */
 - (void)fetchMessagesHeadersForAccount:(Account *)account;
 
+- (void) startIDLEForAccount:(Account *)account;
 @end

@@ -34,10 +34,13 @@
     return self.label;
 }
 
+/* Récupère les entêtes des messages pour le compte passé en paramètre */
 - (void)fetchMessagesHeadersForAccount:(Account *)account
 {
     MCOIMAPMessagesRequestKind requestKind = MCOIMAPMessagesRequestKindHeaders | MCOIMAPMessagesRequestKindFlags | MCOIMAPMessagesRequestKindStructure;
+    
     MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(1, UINT64_MAX)];
+    
     MCOIMAPFetchMessagesOperation *fetchOperation = [account.imapSession fetchMessagesByUIDOperationWithFolder:self.path requestKind:requestKind uids:uids];
     
     [fetchOperation start:^(NSError * error, NSArray * fetchedMessages, MCOIndexSet * vanishedMessages) {
@@ -100,41 +103,24 @@
     return image;
 }
 
-
+/* Met à jour le nombre de message non-lus dans un dossier */
 - (void)updateNbUnread
 {
     self.nbUnread = [[self.messages valueForKeyPath:@"@sum.unread"] integerValue];
 }
-/*
-- (void)registerAsObserver
-{
-    for (Message *m in self.messages) {
-        [m addObserver:self
-            forKeyPath:@"unread"
-               options:(NSKeyValueObservingOptionNew |
-                        NSKeyValueObservingOptionOld)
-               context:NULL];
-    }
-    
-}
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    NSLog (@"Pif");
-    
-    [self updateNbUnread];
-}*/
-
+/* Gère les notifications IMAP (IDLE) */
 - (void) startIDLEForAccount:(Account *)account {
     Message *lastMessage = [self.messages lastObject];
     MCOIMAPIdleOperation *idleOperation = [account.imapSession idleOperationWithFolder:self.path lastKnownUID:(int)[lastMessage uid]];
-    // NSLog(@"Start IDLE %@/%@",account,self);
+
     [idleOperation start:^(NSError *error) {
         NSLog(@"IDLE : %@/%@",account,self.path);
-        
         [self fetchMessagesHeadersForAccount:account];
-        if (error) {
-            NSLog(@"IDLE %@",error);
-        }
+        //[self fetchMessagesHeadersForAccount:account];
+        //if (error) {
+            //NSLog(@"IDLE %@",error);
+        //}
     }];
 }
 

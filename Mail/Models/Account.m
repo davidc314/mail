@@ -96,6 +96,7 @@
     
     return self;
 }
+/* Ajoute un "observer" sur chaque dossier pour detecter les changements */
 - (void)registerAsObserver
 {
     for (Folder *f in self.folders) {
@@ -108,6 +109,7 @@
     
 }
 
+/* Observe les changements sur les dossiers et actualise le nombre de messages non-lus */
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     NSUInteger count = 0;
     
@@ -118,6 +120,7 @@
     self.nbUnread = count;
 }
 
+/* Vérifie la configuration du compte en testant la connexion au serveur IMAP et au serveur SMTTP */
 - (void) checkAccountOperations  {
     MCOIMAPOperation *imapCheckOperation = [self.imapSession checkAccountOperation];
     MCOSMTPOperation *smtpCheckOperation = [self.smtpSession checkAccountOperationWithFrom:[MCOAddress addressWithMailbox:self.mail]];
@@ -133,6 +136,7 @@
    }];
 }
 
+/* Encode les propriétés pour les stocker dans le fichier account.plist */
 - (void) encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.name forKey:NAME];
     [encoder encodeObject:self.mail forKey:MAIL];
@@ -158,10 +162,13 @@
 - (NSString *) description {
     return [NSString stringWithFormat:@"%@",self.name];
 }
+
+
 - (BOOL) isGMAIL {
     return [self.imapHostname  isEqual: @"imap.gmail.com"] && [self.smtpHostname  isEqual: @"smtp.gmail.com"];
 }
 
+/* Obtient la liste des dossiers du compte et ajoute les sous-dossier au dossier */
 - (void) fetchFolders {
     NSMutableArray *folders = [NSMutableArray array];
     
@@ -179,7 +186,7 @@
             
             
             Folder *folder = [[Folder alloc]initWithName:fetchedFolder.path flags:fetchedFolder.flags];
-            
+
             if (pathComponents.count == 1) {
                 [folders addObject:folder];
                 folder.label = [pathComponents lastObject];
@@ -213,7 +220,7 @@
     }];
 }
 
-
+/* Test si le dossier et contenu dans le tableau passé en paramétre */
 - (Folder *) containsFolder:(NSString *)searchedFolder array:(NSArray *)folders {
     for (Folder *folder in folders) {
         if ([folder.label isEqualToString:searchedFolder]) {
@@ -223,7 +230,7 @@
     return nil;
 }
 
-
+/* Définit pour chaque dossier les propriétés label et index */
 - (void)setFoldersLabelsAndIndexes
 {
     NSArray *folderOrder = @[@"Inbox",@"Sent",@"Drafts",@"Important",@"Starred",@"Trash",@"Spam",@"All messages"];
@@ -233,13 +240,13 @@
         NSUInteger index = 10;
         
         if ([folder.path isEqualToString:@"INBOX"]) {index = 0;} // Inbox
-        else if ([folder.path isEqualToString:self.provider.sentMailFolderPath] || (folder.flags & MCOIMAPFolderFlagSentMail)) {index = 1;} // Sent
-        else if ([folder.path isEqualToString:self.provider.draftsFolderPath] || (folder.flags & MCOIMAPFolderFlagDrafts)) {index = 2;} // Drafts
-        else if ([folder.path isEqualToString:self.provider.importantFolderPath] || (folder.flags & MCOIMAPFolderFlagImportant)) {index = 3;} // Important
-        else if ([folder.path isEqualToString:self.provider.starredFolderPath] || (folder.flags & MCOIMAPFolderFlagStarred)) {index = 4;} // Starred
-        else if ([folder.path isEqualToString:self.provider.trashFolderPath] || (folder.flags & MCOIMAPFolderFlagTrash)) {index = 5;} // Trash
-        else if ([folder.path isEqualToString:self.provider.spamFolderPath] || (folder.flags & MCOIMAPFolderFlagSpam)) {index = 6;} // Spam
-        else if ([folder.path isEqualToString:self.provider.allMailFolderPath] || (folder.flags & MCOIMAPFolderFlagAllMail)) {index = 7;} // All Mail
+        else if ([folder.path isEqualToString:self.provider.sentMailFolderPath] || (folder.flags & MCOIMAPFolderFlagSentMail)) {index = 1;} /* Sent */
+        else if ([folder.path isEqualToString:self.provider.draftsFolderPath] || (folder.flags & MCOIMAPFolderFlagDrafts)) {index = 2;} /* Drafts */
+        else if ([folder.path isEqualToString:self.provider.importantFolderPath] || (folder.flags & MCOIMAPFolderFlagImportant)) {index = 3;} /* Important */
+        else if ([folder.path isEqualToString:self.provider.starredFolderPath] || (folder.flags & MCOIMAPFolderFlagStarred)) {index = 4;} /* Starred */
+        else if ([folder.path isEqualToString:self.provider.trashFolderPath] || (folder.flags & MCOIMAPFolderFlagTrash)) {index = 5;} /* Trash */
+        else if ([folder.path isEqualToString:self.provider.spamFolderPath] || (folder.flags & MCOIMAPFolderFlagSpam)) {index = 6;} /* Spam */
+        else if ([folder.path isEqualToString:self.provider.allMailFolderPath] || (folder.flags & MCOIMAPFolderFlagAllMail)) {index = 7;} /* All Mail */
         
         if (index <= folderOrder.count) {
             folder.label = folderOrder[index];

@@ -366,16 +366,12 @@
 			children = (
 				736094261896744D00E664B4 /* AppDelegate.h */,
 				736094271896744D00E664B4 /* AppDelegate.m */,
-				739ABA0318F2918800EBD5F8 /* MainMenu.xib */,
 				6367D02418AD4A9700B60DF4 /* MessageDetail.h */,
 				6367D02518AD4A9700B60DF4 /* MessageDetail.m */,
-				6367D02618AD4A9700B60DF4 /* MessageDetail.xib */,
 				6367D02718AD4A9700B60DF4 /* NewMessage.h */,
 				6367D02818AD4A9700B60DF4 /* NewMessage.m */,
-				6367D02918AD4A9700B60DF4 /* NewMessage.xib */,
 				6367D02A18AD4A9700B60DF4 /* Settings.h */,
 				6367D02B18AD4A9700B60DF4 /* Settings.m */,
-				6367D02C18AD4A9700B60DF4 /* Settings.xib */,
 				7303DE65191262EE00404E5C /* AttachmentItemViewController.h */,
 				7303DE66191262EE00404E5C /* AttachmentItemViewController.m */,
 			);
@@ -408,6 +404,7 @@
 		731FE27418A36BDF00715E68 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7385081B192E197900D31CE9 /* IB */,
 				736D490D19260B4E001564C1 /* RecipientTokenField.h */,
 				736D490E19260B4E001564C1 /* RecipientTokenField.m */,
 				73995E141924F3C800E70670 /* AttachmentCollectionView.h */,
@@ -534,12 +531,7 @@
 				63E3398F18A3F99900B42F23 /* Controllers */,
 				731FE27518A371B700715E68 /* Models */,
 				731FE27418A36BDF00715E68 /* Views */,
-				73298F4818E1B89F00E05756 /* fileSizeTransformer.h */,
-				73298F4918E1B89F00E05756 /* fileSizeTransformer.m */,
-				7389B13E1920C28200C84A5A /* UpperCaseValueTransformer.h */,
-				7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */,
-				7374E1D818E9400800741BE2 /* dateValueTransformer.h */,
-				7374E1D918E9400800741BE2 /* dateValueTransformer.m */,
+				73850816192E194300D31CE9 /* ValueTransformer */,
 				6317C0E418A54BA900479569 /* Resources */,
 				7360942C1896744D00E664B4 /* Images.xcassets */,
 				7360941B1896744D00E664B4 /* Supporting Files */,
@@ -575,6 +567,30 @@
 				7360943B1896744D00E664B4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		73850816192E194300D31CE9 /* ValueTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				73298F4818E1B89F00E05756 /* fileSizeTransformer.h */,
+				73298F4918E1B89F00E05756 /* fileSizeTransformer.m */,
+				7389B13E1920C28200C84A5A /* UpperCaseValueTransformer.h */,
+				7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */,
+				7374E1D818E9400800741BE2 /* dateValueTransformer.h */,
+				7374E1D918E9400800741BE2 /* dateValueTransformer.m */,
+			);
+			name = ValueTransformer;
+			sourceTree = "<group>";
+		};
+		7385081B192E197900D31CE9 /* IB */ = {
+			isa = PBXGroup;
+			children = (
+				739ABA0318F2918800EBD5F8 /* MainMenu.xib */,
+				6367D02618AD4A9700B60DF4 /* MessageDetail.xib */,
+				6367D02918AD4A9700B60DF4 /* NewMessage.xib */,
+				6367D02C18AD4A9700B60DF4 /* Settings.xib */,
+			);
+			name = IB;
 			sourceTree = "<group>";
 		};
 		73ADEF821920F9C1004BE462 /* buttons */ = {

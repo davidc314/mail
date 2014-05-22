@@ -31,6 +31,7 @@
 }
 
 - (void) textDidChange:(NSNotification *)notification {
+    [super textDidChange:notification];
     self.empty = self.stringValue.length>0;
 }
 
