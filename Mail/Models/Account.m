@@ -67,6 +67,8 @@
     if (!self) {
         return nil;
     }
+    
+    /* Récupération des paramétre en fonction de leur clé */
     self.name = [decoder decodeObjectForKey:NAME];
     self.mail = [decoder decodeObjectForKey:MAIL];
     
@@ -86,6 +88,7 @@
     
     self.provider = [[MCOMailProvidersManager sharedManager] providerForEmail:self.mail];
     
+    /* Connexion aux serveurs */
     [self connectToIMAP];
     [self connectToSMTP];
     

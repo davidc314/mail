@@ -23,6 +23,7 @@
     }
     return self;
 }
+/* Double click sur une pièce jointe */
 - (void) doubleClick:(id)sender {
     id delegate = [self.collectionView delegate];
     if([delegate respondsToSelector:@selector(doubleClick:)]) {
@@ -30,6 +31,7 @@
     }
 }
 
+/* Click droit sur une pièce jointe */
 - (void) rightClicked:(id)sender event:(NSEvent *)event {
     id delegate = [self.collectionView delegate];
     if([delegate respondsToSelector:@selector(rightClicked:event:)]) {
@@ -38,17 +40,11 @@
     }
 }
 
+/* Sélectionne une joint pièce jointe */
 -(void)setSelected:(BOOL)flag
 {
     [super setSelected:flag];
-    /*
-    for (NSView *view in self.view.subviews) {
-        if ([view isKindOfClass:[AttachmentTextField class]]) {
-            [(AttachmentTextField *) view setSelected:flag];
-            [(AttachmentTextField *) view setNeedsDisplay:YES];
-        }
-    }
-     */
+    
     [(AttachmentView *) self.view setSelected:flag];
     [(AttachmentView *) self.view setNeedsDisplay:YES];
 }

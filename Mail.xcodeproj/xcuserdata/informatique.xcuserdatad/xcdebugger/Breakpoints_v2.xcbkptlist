@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
             endingLineNumber = "87"
-            landmarkName = "-sendMessageFromAccount:"
+            landmarkName = "-sendMessageFromAccount:completion:"
             landmarkType = "4">
          </BreakpointContent>
       </BreakpointProxy>

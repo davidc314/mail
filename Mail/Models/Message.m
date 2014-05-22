@@ -127,7 +127,7 @@
 
 
 //Send new message
-- (void) sendMessageFromAccount:(Account *)account {
+- (void) sendMessageFromAccount:(Account *)account completion:(void (^)(BOOL sent))handler {
 
     
     MCOMessageBuilder * builder = [[MCOMessageBuilder alloc] init];
@@ -147,9 +147,11 @@
     [sendOperation start:^(NSError *error) {
         if(!error) {
             NSLog(@"Message send");
+            handler(YES);
         }
         else {
             NSLog(@"Message not send");
+            handler(NO);
         }
 
         

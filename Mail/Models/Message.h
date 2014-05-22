@@ -84,6 +84,6 @@
  
  @param account Le compte depuis lequel on transmet le message
  */
-- (void) sendMessageFromAccount:(Account *)account;
+- (void) sendMessageFromAccount:(Account *)account completion:(void (^)(BOOL sent))handler;
 
 @end

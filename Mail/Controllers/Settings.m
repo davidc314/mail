@@ -14,6 +14,7 @@
 
 @implementation Settings
 
+/* Initialisation de la fenêtre de paramétrage des comptes */
 - (id)initWithWindow:(NSWindow *)window
 {
     self = [super initWithWindow:window];
@@ -23,25 +24,29 @@
     return self;
 }
 
+/* Fin de chargement de la fenêtre */
 - (void)windowDidLoad
 {
     [super windowDidLoad];
     
 }
 
+/* Ajout d'un nouveau compte */
 - (IBAction)newAccount:(id)sender {
     [self willChangeValueForKey:@"accounts"];
     [[AccountsManager sharedManager] addAccount];
     [self didChangeValueForKey:@"accounts"];
-    //[self.arrayController add]
 }
 
+
+/* Suppression d'un compte */
 - (IBAction)removeAccount:(id)sender {
     NSIndexSet *indexSet = [self.arrayController selectionIndexes];
     [[AccountsManager sharedManager] removeAccountsAtIndexes:indexSet];
     [self.tableView removeRowsAtIndexes:indexSet withAnimation:NSTableViewAnimationSlideRight];
 }
 
+/* Fermeture de l'interface de paramétrage et sauvegarde des paramètres */
 - (BOOL) windowShouldClose:(id)sender {
     [self.window makeFirstResponder:self.window];
     return [[AccountsManager sharedManager] saveAccounts];

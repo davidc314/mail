@@ -68,11 +68,29 @@
 /* Envoie du message et notification */
 - (void) sendMessage:(Message *)message
 {
-    [message sendMessageFromAccount:self.selectedAccount];
-    [self sendNotification:@"Message sent"];
+    [self.sendingProgressIndicator setHidden:NO];
+    [self.sendingProgressIndicator startAnimation:self];
+    
+    [message sendMessageFromAccount:self.selectedAccount completion:^(BOOL sent){
+        if (sent) {
+            [self sendNotification:@"Message sent"];
+            [self.window close];
+        }
+        else {
+            NSAlert *alert = [NSAlert alertWithMessageText:@"Message not sent"
+                                             defaultButton:@"Ok" alternateButton:nil
+                                               otherButton:nil
+                                 informativeTextWithFormat:@"Try to verify recipients"];
+            
+            [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {}];
+        }
+        [self.sendingProgressIndicator setHidden:YES];
+        [self.sendingProgressIndicator stopAnimation:self];
+        
+    }];
     
     /* Fermeture de la fenêtre */
-    [self.window close];
+    //[self.window close];
 }
 
 /* Envoie de la notification */
@@ -82,10 +100,13 @@
     [notification setTitle:message];
     [notification setSubtitle:self.subject.stringValue];
     [notification setSoundName:NSUserNotificationDefaultSoundName];
+    [notification setHasActionButton:NO];
+    [notification setDeliveryDate:[NSDate dateWithTimeInterval:0.1 sinceDate:[NSDate date]]];
     
     NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
     [center setDelegate:self];
     [center deliverNotification:notification];
+    [center scheduleNotification:notification];
 }
 
 /* Convertis les adresses en MCOAdress */

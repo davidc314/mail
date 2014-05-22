@@ -40,5 +40,6 @@
 
 /** Menu contextuel pour une pièce jointe */
 @property (strong) IBOutlet NSMenu *attachmentContextMenu;
+@property (weak) IBOutlet NSProgressIndicator *sendingProgressIndicator;
 
 @end
