@@ -2,8 +2,8 @@
 //  fileSizeTransformer.m
 //  attachmentsCollectionView
 //
-//  Created by Informatique on 17.03.14.
-//  Copyright (c) 2014 Informatique. All rights reserved.
+//  Created by Coninckx David on 17.03.14.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import "FileSizeTransformer.h"
@@ -13,6 +13,7 @@
 #define GB pow(KB,3)
 
 @implementation FileSizeTransformer
+
 
 - (id) transformedValue:(id)value {
     UInt64 intValue = [value unsignedLongLongValue];

@@ -2,8 +2,8 @@
 //  MessageDetail.h
 //  Mail
 //
-//  Created by Informatique on 05.02.14.
-//  Copyright (c) 2014 Informatique. All rights reserved.
+//  Created by Coninckx David on 05.02.14.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

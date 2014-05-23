@@ -3,7 +3,7 @@
 //  Mail
 //
 //  Created by David Coninckx on 08.02.14.
-//  Copyright (c) 2014 Informatique. All rights reserved.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import "NewMessage.h"

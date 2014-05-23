@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** Transforme une chaîne de caractères en majuscules */
 @interface UpperCaseValueTransformer : NSValueTransformer
 
 @end

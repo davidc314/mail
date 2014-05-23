@@ -2,8 +2,8 @@
 //  Message.h
 //  Mail
 //
-//  Created by Informatique on 06.02.14.
-//  Copyright (c) 2014 Informatique. All rights reserved.
+//  Created by Coninckx David on 06.02.14.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -83,6 +83,7 @@
  Envoie un message correctement instancié depuis un compte
  
  @param account Le compte depuis lequel on transmet le message
+ @param handler Callback pour renvoyer le résultat de l'envoi
  */
 - (void) sendMessageFromAccount:(Account *)account completion:(void (^)(BOOL sent))handler;
 

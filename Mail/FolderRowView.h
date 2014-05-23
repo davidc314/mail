@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+/** Vue pour un dossier dans la liste */ 
 @interface FolderRowView : NSTableRowView
 
 @end

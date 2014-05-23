@@ -3,7 +3,7 @@
 //  attachmentsCollectionView
 //
 //  Created by David Coninckx on 25.03.14.
-//  Copyright (c) 2014 Informatique. All rights reserved.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import "AttachmentItemViewController.h"

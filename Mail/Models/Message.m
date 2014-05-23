@@ -2,8 +2,8 @@
 //  Message.m
 //  Mail
 //
-//  Created by Informatique on 06.02.14.
-//  Copyright (c) 2014 Informatique. All rights reserved.
+//  Created by Coninckx David on 06.02.14.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import "Message.h"
@@ -11,6 +11,7 @@
 
 @implementation Message
 
+/* Initialisation d'un message de test */
 - (id) init
 {
     self = [super init];
@@ -21,7 +22,7 @@
     return self;
 }
 
-
+/* Construction d'un message pour l'envoi */
 -  (id)initBuildMessageWithTo: (NSArray *)to subject:(NSString *)subject body:(NSString *)body attachments:(NSMutableArray *)attachments
 {
     self = [super init];
@@ -33,12 +34,14 @@
     return self;
 }
 
+/* Initialisation un message sur la base d'un MCOIMAPMessage */
 - (id)initWithMCOIMAPMessage:(MCOIMAPMessage *)msg
 {
     self = [super init];
     
     MCOMessageHeader *header = [msg header];
     if (self) {
+        /* Expéditeur */
         MCOAddress *fromAddress = [header from];
         
         if ([[header from] displayName]) {
@@ -47,7 +50,6 @@
             _from = [NSString stringWithFormat:@"<%@>",[fromAddress mailbox]];
         }
         if ([header subject]) {
-            //_subject = [[header subject] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
             _subject = [[header subject] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         }
         else {
@@ -56,14 +58,14 @@
         _uid = [msg uid];
         _date = [header date];
         
-        //Message flags
+        /* Marqueurs */
         _flags = [msg flags];
         
         self.unread = !(_flags  & MCOMessageFlagSeen);
         _replied = _flags & MCOMessageFlagAnswered;
         _forwarded = _flags & MCOMessageFlagForwarded;
         
-        //Attachments
+        /* Pièces jointes */
         _hasAttachments = [[msg attachments] count] > 0;
         
         if (_hasAttachments) {
@@ -77,7 +79,7 @@
 }
 
 
-
+/* Récupération du contenu d'un message */
 - (void)fetchBodyForFolder:(Folder *)folder account:(Account *)account completion:(void (^)(NSString *, NSMutableArray *))handler
 {
     MCOIMAPFetchContentOperation *fetchContentOperation = [account.imapSession fetchMessageByUIDOperationWithFolder:folder.path uid:(int)self.uid];
@@ -95,14 +97,14 @@
         MCOMessageParser * msg = [MCOMessageParser messageParserWithData:data];
         MCOIMAPOperation *setFlagsSeen = [account.imapSession storeFlagsOperationWithFolder:folder.path uids:[MCOIndexSet indexSetWithIndex:self.uid] kind:MCOIMAPStoreFlagsRequestKindAdd flags:MCOMessageFlagSeen];
         
-        //Flag seen
+        /* Marqueur message lus */
         [setFlagsSeen start:^(NSError *error){}];
         self.unread = NO;
         
-        //Get message body
+        /* Corps du message */
         NSString * msgBody = [msg htmlBodyRendering];
         
-        //Get message attachments
+        /* Pièces jointes */
         self.attachments = [NSMutableArray array];
         
         if ([[msg mainPart] isKindOfClass:[MCOAbstractMultipart class]]) {
@@ -113,6 +115,7 @@
             }
         }
         
+        /* Initialisation des pièces jointes sur la base du modèle */
         for (MCOAttachment *attachment in [msg attachments]) {
             NSData *data = [attachment data];
             Attachment *newAttachment = [[Attachment alloc] initWithName:[attachment filename] size:[data length] data:attachment.data];
@@ -120,16 +123,16 @@
         }
         
         
-        //Callback
+        /* Callback */
         handler(msgBody,self.attachments);
     }];
 }
 
 
-//Send new message
+/* Envoi d'un nouveau message */
 - (void) sendMessageFromAccount:(Account *)account completion:(void (^)(BOOL sent))handler {
 
-    
+    /* Objet pour la construction du message selon la rfc */
     MCOMessageBuilder * builder = [[MCOMessageBuilder alloc] init];
     
     [[builder header] setFrom:[MCOAddress addressWithDisplayName:nil mailbox:account.smtpSession.username]];
@@ -141,15 +144,19 @@
         [builder addAttachment:[MCOAttachment attachmentWithData:attachment.data filename:attachment.name]];
     }
     
+    /* Données selon rfc822 */
     NSData * rfc822Data = [builder data];
     
+    /* Envoi */
     MCOSMTPSendOperation *sendOperation = [account.smtpSession sendOperationWithData:rfc822Data];
     [sendOperation start:^(NSError *error) {
         if(!error) {
+            /* Réussi */
             NSLog(@"Message send");
             handler(YES);
         }
         else {
+            /* Echoué */
             NSLog(@"Message not send");
             handler(NO);
         }

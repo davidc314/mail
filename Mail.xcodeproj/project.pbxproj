@@ -42,7 +42,6 @@
 		7313086F18F51AA900243913 /* starred.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313086818F51AA900243913 /* starred.pdf */; };
 		7313087018F51AA900243913 /* trash.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313086918F51AA900243913 /* trash.pdf */; };
 		7313087218F51FD800243913 /* folder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313087118F51FD800243913 /* folder.pdf */; };
-		7313087518F52D6800243913 /* FolderRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7313087418F52D6800243913 /* FolderRowView.m */; };
 		7313087718F570BC00243913 /* forwardTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313087618F570BC00243913 /* forwardTemplate.pdf */; };
 		7313087918F570C300243913 /* replyTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313087818F570C300243913 /* replyTemplate.pdf */; };
 		7313087B18F5782700243913 /* search.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7313087A18F5782700243913 /* search.pdf */; };
@@ -51,32 +50,11 @@
 		731812DF18F8246F008E6D44 /* icon_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 731812DA18F8246F008E6D44 /* icon_128x128.png */; };
 		731812E018F8246F008E6D44 /* icon_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 731812DB18F8246F008E6D44 /* icon_256x256.png */; };
 		731812E118F8246F008E6D44 /* icon_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 731812DC18F8246F008E6D44 /* icon_512x512.png */; };
-		73202CEC18ED33D500F0594B /* openedmail_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CE518ED33D500F0594B /* openedmail_16x16.png */; };
-		73202CED18ED33D500F0594B /* openedmail_32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CE618ED33D500F0594B /* openedmail_32x32.png */; };
-		73202CEE18ED33D500F0594B /* openedmail_64x64.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CE718ED33D500F0594B /* openedmail_64x64.png */; };
-		73202CEF18ED33D500F0594B /* openedmail_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CE818ED33D500F0594B /* openedmail_128x128.png */; };
-		73202CF018ED33D500F0594B /* openedmail_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CE918ED33D500F0594B /* openedmail_256x256.png */; };
-		73202CF118ED33D500F0594B /* openedmail_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CEA18ED33D500F0594B /* openedmail_512x512.png */; };
-		73202CF218ED33D500F0594B /* openedmail_1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CEB18ED33D500F0594B /* openedmail_1024x1024.png */; };
-		73202CFA18ED3BD500F0594B /* closedmail_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CF318ED3BD500F0594B /* closedmail_16x16.png */; };
-		73202CFB18ED3BD500F0594B /* closedmail_32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CF418ED3BD500F0594B /* closedmail_32x32.png */; };
-		73202CFC18ED3BD500F0594B /* closedmail_64x64.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CF518ED3BD500F0594B /* closedmail_64x64.png */; };
-		73202CFD18ED3BD500F0594B /* closedmail_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CF618ED3BD500F0594B /* closedmail_128x128.png */; };
-		73202CFE18ED3BD500F0594B /* closedmail_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CF718ED3BD500F0594B /* closedmail_256x256.png */; };
-		73202CFF18ED3BD500F0594B /* closedmail_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CF818ED3BD500F0594B /* closedmail_512x512.png */; };
-		73202D0018ED3BD500F0594B /* closedmail_1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 73202CF918ED3BD500F0594B /* closedmail_1024x1024.png */; };
 		73298F4718E1A9E500E05756 /* Attachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 73298F4618E1A9E500E05756 /* Attachment.m */; };
 		73298F4A18E1B89F00E05756 /* fileSizeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 73298F4918E1B89F00E05756 /* fileSizeTransformer.m */; };
 		732BB8241917637600328A4B /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732BB8231917631400328A4B /* MailCore.framework */; };
 		732F941E18E40B60008AC581 /* MessageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 732F941D18E40B60008AC581 /* MessageHeaderView.m */; };
 		7345876618E466C000B74D63 /* AccountsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7345876518E466C000B74D63 /* AccountsManager.m */; };
-		734EC4C118F2C2EC00DD1B2A /* openedmail_margin_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 734EC4BA18F2C2EC00DD1B2A /* openedmail_margin_16x16.png */; };
-		734EC4C218F2C2EC00DD1B2A /* openedmail_margin_32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 734EC4BB18F2C2EC00DD1B2A /* openedmail_margin_32x32.png */; };
-		734EC4C318F2C2EC00DD1B2A /* openedmail_margin_64x64.png in Resources */ = {isa = PBXBuildFile; fileRef = 734EC4BC18F2C2EC00DD1B2A /* openedmail_margin_64x64.png */; };
-		734EC4C418F2C2EC00DD1B2A /* openedmail_margin_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 734EC4BD18F2C2EC00DD1B2A /* openedmail_margin_128x128.png */; };
-		734EC4C518F2C2EC00DD1B2A /* openedmail_margin_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 734EC4BE18F2C2EC00DD1B2A /* openedmail_margin_256x256.png */; };
-		734EC4C618F2C2EC00DD1B2A /* openedmail_margin_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 734EC4BF18F2C2EC00DD1B2A /* openedmail_margin_512x512.png */; };
-		734EC4C718F2C2EC00DD1B2A /* openedmail_margin_1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 734EC4C018F2C2EC00DD1B2A /* openedmail_margin_1024x1024.png */; };
 		7353903918DAFE3A00A070F2 /* Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7353903818DAFE3A00A070F2 /* Folder.m */; };
 		736094151896744D00E664B4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736094141896744D00E664B4 /* Cocoa.framework */; };
 		7360941F1896744D00E664B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7360941D1896744D00E664B4 /* InfoPlist.strings */; };
@@ -89,13 +67,15 @@
 		7360943D1896744D00E664B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7360943B1896744D00E664B4 /* InfoPlist.strings */; };
 		7360943F1896744D00E664B4 /* MailTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7360943E1896744D00E664B4 /* MailTests.m */; };
 		7360945B1896749D00E664B4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7360945A1896749D00E664B4 /* Security.framework */; };
+		73675AC6192F46AB0058CB26 /* FolderRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73675AC5192F46AB0058CB26 /* FolderRowView.m */; };
 		736D490F19260B4E001564C1 /* RecipientTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 736D490E19260B4E001564C1 /* RecipientTokenField.m */; };
 		736D491519263658001564C1 /* MailCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 732BB8231917631400328A4B /* MailCore.framework */; };
 		7374E1DA18E9400800741BE2 /* dateValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7374E1D918E9400800741BE2 /* dateValueTransformer.m */; };
 		7374E1E018E96E2600741BE2 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7374E1DF18E96E2600741BE2 /* bar.png */; };
-		7374E1E318E9830F00741BE2 /* MessageRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7374E1E218E9830F00741BE2 /* MessageRowView.m */; };
 		7375F7D9190F849A0076BF69 /* opened_folder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7D8190F849A0076BF69 /* opened_folder.pdf */; };
 		7375F7DF190F8A4D0076BF69 /* save.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7DE190F8A4D0076BF69 /* save.pdf */; };
+		7385081D192E30D000D31CE9 /* icon_64x64.png in Resources */ = {isa = PBXBuildFile; fileRef = 7385081C192E30D000D31CE9 /* icon_64x64.png */; };
+		7385081F192E312700D31CE9 /* icon_1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 7385081E192E312700D31CE9 /* icon_1024x1024.png */; };
 		7389B1401920C28200C84A5A /* UpperCaseValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */; };
 		73995E161924F3C800E70670 /* AttachmentCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73995E151924F3C800E70670 /* AttachmentCollectionView.m */; };
 		73995E1D1924F77300E70670 /* sendTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 73995E1C1924F77300E70670 /* sendTemplate.pdf */; };
@@ -204,8 +184,6 @@
 		7313086818F51AA900243913 /* starred.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = starred.pdf; path = Resources/folders/starred.pdf; sourceTree = "<group>"; };
 		7313086918F51AA900243913 /* trash.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = trash.pdf; path = Resources/folders/trash.pdf; sourceTree = "<group>"; };
 		7313087118F51FD800243913 /* folder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = folder.pdf; path = Resources/folders/folder.pdf; sourceTree = "<group>"; };
-		7313087318F52D6800243913 /* FolderRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderRowView.h; sourceTree = "<group>"; };
-		7313087418F52D6800243913 /* FolderRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderRowView.m; sourceTree = "<group>"; };
 		7313087618F570BC00243913 /* forwardTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = forwardTemplate.pdf; path = Resources/forwardTemplate.pdf; sourceTree = "<group>"; };
 		7313087818F570C300243913 /* replyTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = replyTemplate.pdf; path = Resources/replyTemplate.pdf; sourceTree = "<group>"; };
 		7313087A18F5782700243913 /* search.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = search.pdf; path = Resources/search.pdf; sourceTree = "<group>"; };
@@ -214,20 +192,6 @@
 		731812DA18F8246F008E6D44 /* icon_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_128x128.png; path = Resources/logo/logo_new.iconset/icon_128x128.png; sourceTree = "<group>"; };
 		731812DB18F8246F008E6D44 /* icon_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_256x256.png; path = Resources/logo/logo_new.iconset/icon_256x256.png; sourceTree = "<group>"; };
 		731812DC18F8246F008E6D44 /* icon_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_512x512.png; path = Resources/logo/logo_new.iconset/icon_512x512.png; sourceTree = "<group>"; };
-		73202CE518ED33D500F0594B /* openedmail_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_16x16.png; path = Resources/logo/openedmail/openedmail_16x16.png; sourceTree = "<group>"; };
-		73202CE618ED33D500F0594B /* openedmail_32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_32x32.png; path = Resources/logo/openedmail/openedmail_32x32.png; sourceTree = "<group>"; };
-		73202CE718ED33D500F0594B /* openedmail_64x64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_64x64.png; path = Resources/logo/openedmail/openedmail_64x64.png; sourceTree = "<group>"; };
-		73202CE818ED33D500F0594B /* openedmail_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_128x128.png; path = Resources/logo/openedmail/openedmail_128x128.png; sourceTree = "<group>"; };
-		73202CE918ED33D500F0594B /* openedmail_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_256x256.png; path = Resources/logo/openedmail/openedmail_256x256.png; sourceTree = "<group>"; };
-		73202CEA18ED33D500F0594B /* openedmail_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_512x512.png; path = Resources/logo/openedmail/openedmail_512x512.png; sourceTree = "<group>"; };
-		73202CEB18ED33D500F0594B /* openedmail_1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_1024x1024.png; path = Resources/logo/openedmail/openedmail_1024x1024.png; sourceTree = "<group>"; };
-		73202CF318ED3BD500F0594B /* closedmail_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closedmail_16x16.png; path = Resources/logo/closedmail/closedmail_16x16.png; sourceTree = "<group>"; };
-		73202CF418ED3BD500F0594B /* closedmail_32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closedmail_32x32.png; path = Resources/logo/closedmail/closedmail_32x32.png; sourceTree = "<group>"; };
-		73202CF518ED3BD500F0594B /* closedmail_64x64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closedmail_64x64.png; path = Resources/logo/closedmail/closedmail_64x64.png; sourceTree = "<group>"; };
-		73202CF618ED3BD500F0594B /* closedmail_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closedmail_128x128.png; path = Resources/logo/closedmail/closedmail_128x128.png; sourceTree = "<group>"; };
-		73202CF718ED3BD500F0594B /* closedmail_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closedmail_256x256.png; path = Resources/logo/closedmail/closedmail_256x256.png; sourceTree = "<group>"; };
-		73202CF818ED3BD500F0594B /* closedmail_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closedmail_512x512.png; path = Resources/logo/closedmail/closedmail_512x512.png; sourceTree = "<group>"; };
-		73202CF918ED3BD500F0594B /* closedmail_1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closedmail_1024x1024.png; path = Resources/logo/closedmail/closedmail_1024x1024.png; sourceTree = "<group>"; };
 		73298F4518E1A9E500E05756 /* Attachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attachment.h; sourceTree = "<group>"; };
 		73298F4618E1A9E500E05756 /* Attachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attachment.m; sourceTree = "<group>"; };
 		73298F4818E1B89F00E05756 /* fileSizeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileSizeTransformer.h; sourceTree = "<group>"; };
@@ -237,13 +201,6 @@
 		732F941D18E40B60008AC581 /* MessageHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageHeaderView.m; sourceTree = "<group>"; };
 		7345876418E466C000B74D63 /* AccountsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsManager.h; sourceTree = "<group>"; };
 		7345876518E466C000B74D63 /* AccountsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsManager.m; sourceTree = "<group>"; };
-		734EC4BA18F2C2EC00DD1B2A /* openedmail_margin_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_margin_16x16.png; path = Resources/logo/openedmail/openedmail_margin_16x16.png; sourceTree = "<group>"; };
-		734EC4BB18F2C2EC00DD1B2A /* openedmail_margin_32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_margin_32x32.png; path = Resources/logo/openedmail/openedmail_margin_32x32.png; sourceTree = "<group>"; };
-		734EC4BC18F2C2EC00DD1B2A /* openedmail_margin_64x64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_margin_64x64.png; path = Resources/logo/openedmail/openedmail_margin_64x64.png; sourceTree = "<group>"; };
-		734EC4BD18F2C2EC00DD1B2A /* openedmail_margin_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_margin_128x128.png; path = Resources/logo/openedmail/openedmail_margin_128x128.png; sourceTree = "<group>"; };
-		734EC4BE18F2C2EC00DD1B2A /* openedmail_margin_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_margin_256x256.png; path = Resources/logo/openedmail/openedmail_margin_256x256.png; sourceTree = "<group>"; };
-		734EC4BF18F2C2EC00DD1B2A /* openedmail_margin_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_margin_512x512.png; path = Resources/logo/openedmail/openedmail_margin_512x512.png; sourceTree = "<group>"; };
-		734EC4C018F2C2EC00DD1B2A /* openedmail_margin_1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = openedmail_margin_1024x1024.png; path = Resources/logo/openedmail/openedmail_margin_1024x1024.png; sourceTree = "<group>"; };
 		7353903718DAFE3A00A070F2 /* Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Folder.h; sourceTree = "<group>"; };
 		7353903818DAFE3A00A070F2 /* Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Folder.m; sourceTree = "<group>"; };
 		736094111896744D00E664B4 /* Mail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mail.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,15 +222,17 @@
 		7360943C1896744D00E664B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7360943E1896744D00E664B4 /* MailTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MailTests.m; sourceTree = "<group>"; };
 		7360945A1896749D00E664B4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		73675AC4192F46AB0058CB26 /* FolderRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderRowView.h; sourceTree = "<group>"; };
+		73675AC5192F46AB0058CB26 /* FolderRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderRowView.m; sourceTree = "<group>"; };
 		736D490D19260B4E001564C1 /* RecipientTokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipientTokenField.h; sourceTree = "<group>"; };
 		736D490E19260B4E001564C1 /* RecipientTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipientTokenField.m; sourceTree = "<group>"; };
 		7374E1D818E9400800741BE2 /* dateValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dateValueTransformer.h; sourceTree = "<group>"; };
 		7374E1D918E9400800741BE2 /* dateValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dateValueTransformer.m; sourceTree = "<group>"; };
 		7374E1DF18E96E2600741BE2 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bar.png; path = Resources/bar.png; sourceTree = "<group>"; };
-		7374E1E118E9830F00741BE2 /* MessageRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageRowView.h; sourceTree = "<group>"; };
-		7374E1E218E9830F00741BE2 /* MessageRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageRowView.m; sourceTree = "<group>"; };
 		7375F7D8190F849A0076BF69 /* opened_folder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = opened_folder.pdf; path = Resources/opened_folder.pdf; sourceTree = "<group>"; };
 		7375F7DE190F8A4D0076BF69 /* save.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = save.pdf; path = Resources/save.pdf; sourceTree = "<group>"; };
+		7385081C192E30D000D31CE9 /* icon_64x64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_64x64.png; path = Resources/logo/logo_new.iconset/icon_64x64.png; sourceTree = "<group>"; };
+		7385081E192E312700D31CE9 /* icon_1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_1024x1024.png; path = Resources/logo/logo_new.iconset/icon_1024x1024.png; sourceTree = "<group>"; };
 		7389B13E1920C28200C84A5A /* UpperCaseValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpperCaseValueTransformer.h; sourceTree = "<group>"; };
 		7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpperCaseValueTransformer.m; sourceTree = "<group>"; };
 		73995E141924F3C800E70670 /* AttachmentCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentCollectionView.h; sourceTree = "<group>"; };
@@ -333,34 +292,6 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		63D7CCBE18A97BC1002B7A90 /* opened */ = {
-			isa = PBXGroup;
-			children = (
-				73202CE518ED33D500F0594B /* openedmail_16x16.png */,
-				73202CE618ED33D500F0594B /* openedmail_32x32.png */,
-				73202CE718ED33D500F0594B /* openedmail_64x64.png */,
-				73202CE818ED33D500F0594B /* openedmail_128x128.png */,
-				73202CE918ED33D500F0594B /* openedmail_256x256.png */,
-				73202CEA18ED33D500F0594B /* openedmail_512x512.png */,
-				73202CEB18ED33D500F0594B /* openedmail_1024x1024.png */,
-			);
-			name = opened;
-			sourceTree = "<group>";
-		};
-		63D7CCC618A98095002B7A90 /* closed */ = {
-			isa = PBXGroup;
-			children = (
-				73202CF318ED3BD500F0594B /* closedmail_16x16.png */,
-				73202CF418ED3BD500F0594B /* closedmail_32x32.png */,
-				73202CF518ED3BD500F0594B /* closedmail_64x64.png */,
-				73202CF618ED3BD500F0594B /* closedmail_128x128.png */,
-				73202CF718ED3BD500F0594B /* closedmail_256x256.png */,
-				73202CF818ED3BD500F0594B /* closedmail_512x512.png */,
-				73202CF918ED3BD500F0594B /* closedmail_1024x1024.png */,
-			);
-			name = closed;
-			sourceTree = "<group>";
-		};
 		63E3398F18A3F99900B42F23 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,24 +312,15 @@
 		63F90CB218A69083005295CF /* logo */ = {
 			isa = PBXGroup;
 			children = (
-				731812D318F82461008E6D44 /* new */,
-				734EC4B918F2C2D100DD1B2A /* opened_margin */,
-				63D7CCC618A98095002B7A90 /* closed */,
-				63D7CCBE18A97BC1002B7A90 /* opened */,
-			);
-			name = logo;
-			sourceTree = "<group>";
-		};
-		731812D318F82461008E6D44 /* new */ = {
-			isa = PBXGroup;
-			children = (
 				731812D818F8246F008E6D44 /* icon_16x16.png */,
 				731812D918F8246F008E6D44 /* icon_32x32.png */,
+				7385081C192E30D000D31CE9 /* icon_64x64.png */,
 				731812DA18F8246F008E6D44 /* icon_128x128.png */,
 				731812DB18F8246F008E6D44 /* icon_256x256.png */,
 				731812DC18F8246F008E6D44 /* icon_512x512.png */,
+				7385081E192E312700D31CE9 /* icon_1024x1024.png */,
 			);
-			name = new;
+			name = logo;
 			sourceTree = "<group>";
 		};
 		731FE27418A36BDF00715E68 /* Views */ = {
@@ -417,10 +339,8 @@
 				6367D01518AD457E00B60DF4 /* SearchFieldCell.m */,
 				732F941C18E40B60008AC581 /* MessageHeaderView.h */,
 				732F941D18E40B60008AC581 /* MessageHeaderView.m */,
-				7374E1E118E9830F00741BE2 /* MessageRowView.h */,
-				7374E1E218E9830F00741BE2 /* MessageRowView.m */,
-				7313087318F52D6800243913 /* FolderRowView.h */,
-				7313087418F52D6800243913 /* FolderRowView.m */,
+				73675AC4192F46AB0058CB26 /* FolderRowView.h */,
+				73675AC5192F46AB0058CB26 /* FolderRowView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -452,20 +372,6 @@
 				732BB8231917631400328A4B /* MailCore.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		734EC4B918F2C2D100DD1B2A /* opened_margin */ = {
-			isa = PBXGroup;
-			children = (
-				734EC4BA18F2C2EC00DD1B2A /* openedmail_margin_16x16.png */,
-				734EC4BB18F2C2EC00DD1B2A /* openedmail_margin_32x32.png */,
-				734EC4BC18F2C2EC00DD1B2A /* openedmail_margin_64x64.png */,
-				734EC4BD18F2C2EC00DD1B2A /* openedmail_margin_128x128.png */,
-				734EC4BE18F2C2EC00DD1B2A /* openedmail_margin_256x256.png */,
-				734EC4BF18F2C2EC00DD1B2A /* openedmail_margin_512x512.png */,
-				734EC4C018F2C2EC00DD1B2A /* openedmail_margin_1024x1024.png */,
-			);
-			name = opened_margin;
 			sourceTree = "<group>";
 		};
 		734EC4D218F2CD3400DD1B2A /* folders */ = {
@@ -726,58 +632,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				734EC4C418F2C2EC00DD1B2A /* openedmail_margin_128x128.png in Resources */,
 				73C40AE7190E5A760007C2BE /* new_logo_notif.pdf in Resources */,
 				7313086A18F51AA900243913 /* draft.pdf in Resources */,
-				73202CFB18ED3BD500F0594B /* closedmail_32x32.png in Resources */,
-				73202CED18ED33D500F0594B /* openedmail_32x32.png in Resources */,
+				7385081D192E30D000D31CE9 /* icon_64x64.png in Resources */,
 				7360941F1896744D00E664B4 /* InfoPlist.strings in Resources */,
-				734EC4C218F2C2EC00DD1B2A /* openedmail_margin_32x32.png in Resources */,
-				734EC4C518F2C2EC00DD1B2A /* openedmail_margin_256x256.png in Resources */,
 				73C40AE5190E564F0007C2BE /* attachmentTemplate.pdf in Resources */,
 				7313086B18F51AA900243913 /* important.pdf in Resources */,
+				7385081F192E312700D31CE9 /* icon_1024x1024.png in Resources */,
 				731812DE18F8246F008E6D44 /* icon_32x32.png in Resources */,
-				73202CF118ED33D500F0594B /* openedmail_512x512.png in Resources */,
 				7313087918F570C300243913 /* replyTemplate.pdf in Resources */,
 				7313086D18F51AA900243913 /* outbox.pdf in Resources */,
 				731812DD18F8246F008E6D44 /* icon_16x16.png in Resources */,
 				731812DF18F8246F008E6D44 /* icon_128x128.png in Resources */,
 				7375F7D9190F849A0076BF69 /* opened_folder.pdf in Resources */,
-				73202CF218ED33D500F0594B /* openedmail_1024x1024.png in Resources */,
-				73202CEC18ED33D500F0594B /* openedmail_16x16.png in Resources */,
 				7313087B18F5782700243913 /* search.pdf in Resources */,
-				734EC4C118F2C2EC00DD1B2A /* openedmail_margin_16x16.png in Resources */,
-				73202CFE18ED3BD500F0594B /* closedmail_256x256.png in Resources */,
 				7374E1E018E96E2600741BE2 /* bar.png in Resources */,
 				731812E018F8246F008E6D44 /* icon_256x256.png in Resources */,
-				73202CFF18ED3BD500F0594B /* closedmail_512x512.png in Resources */,
-				73202CFC18ED3BD500F0594B /* closedmail_64x64.png in Resources */,
 				73995E1D1924F77300E70670 /* sendTemplate.pdf in Resources */,
 				6367D03018AD4A9700B60DF4 /* NewMessage.xib in Resources */,
 				7313087718F570BC00243913 /* forwardTemplate.pdf in Resources */,
 				7313086C18F51AA900243913 /* inbox.pdf in Resources */,
 				73BB96811913BC2C003EBEC7 /* forward_buttonTemplate.pdf in Resources */,
-				73202CFA18ED3BD500F0594B /* closedmail_16x16.png in Resources */,
 				731812E118F8246F008E6D44 /* icon_512x512.png in Resources */,
 				73ADEF7C1920F9BE004BE462 /* attachmentButtonTemplate.pdf in Resources */,
 				7360942D1896744D00E664B4 /* Images.xcassets in Resources */,
 				7313087218F51FD800243913 /* folder.pdf in Resources */,
 				6367D03218AD4A9700B60DF4 /* Settings.xib in Resources */,
-				734EC4C718F2C2EC00DD1B2A /* openedmail_margin_1024x1024.png in Resources */,
 				6367D02E18AD4A9700B60DF4 /* MessageDetail.xib in Resources */,
 				739ABA0418F2918800EBD5F8 /* MainMenu.xib in Resources */,
 				73BB96841913BF8C003EBEC7 /* deleteTemplate.pdf in Resources */,
 				7313086E18F51AA900243913 /* spam.pdf in Resources */,
-				73202CF018ED33D500F0594B /* openedmail_256x256.png in Resources */,
 				7313087018F51AA900243913 /* trash.pdf in Resources */,
 				736094251896744D00E664B4 /* Credits.rtf in Resources */,
-				73202CEE18ED33D500F0594B /* openedmail_64x64.png in Resources */,
-				73202CFD18ED3BD500F0594B /* closedmail_128x128.png in Resources */,
-				734EC4C318F2C2EC00DD1B2A /* openedmail_margin_64x64.png in Resources */,
-				73202D0018ED3BD500F0594B /* closedmail_1024x1024.png in Resources */,
-				734EC4C618F2C2EC00DD1B2A /* openedmail_margin_512x512.png in Resources */,
 				73BB96821913BC2C003EBEC7 /* reply_buttonTemplate.pdf in Resources */,
-				73202CEF18ED33D500F0594B /* openedmail_128x128.png in Resources */,
 				7313086F18F51AA900243913 /* starred.pdf in Resources */,
 				7375F7DF190F8A4D0076BF69 /* save.pdf in Resources */,
 			);
@@ -822,12 +709,12 @@
 				6367D02D18AD4A9700B60DF4 /* MessageDetail.m in Sources */,
 				7353903918DAFE3A00A070F2 /* Folder.m in Sources */,
 				7389B1401920C28200C84A5A /* UpperCaseValueTransformer.m in Sources */,
+				73675AC6192F46AB0058CB26 /* FolderRowView.m in Sources */,
 				6367D03118AD4A9700B60DF4 /* Settings.m in Sources */,
 				7374E1DA18E9400800741BE2 /* dateValueTransformer.m in Sources */,
 				6367D02318AD4A4B00B60DF4 /* Message.m in Sources */,
 				73298F4718E1A9E500E05756 /* Attachment.m in Sources */,
 				7345876618E466C000B74D63 /* AccountsManager.m in Sources */,
-				7374E1E318E9830F00741BE2 /* MessageRowView.m in Sources */,
 				73298F4A18E1B89F00E05756 /* fileSizeTransformer.m in Sources */,
 				736D490F19260B4E001564C1 /* RecipientTokenField.m in Sources */,
 				6367D01618AD457E00B60DF4 /* SearchField.m in Sources */,
@@ -835,7 +722,6 @@
 				7303DE5F191262D300404E5C /* AttachmentView.m in Sources */,
 				6367D02218AD4A4B00B60DF4 /* Account.m in Sources */,
 				736094211896744D00E664B4 /* main.m in Sources */,
-				7313087518F52D6800243913 /* FolderRowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

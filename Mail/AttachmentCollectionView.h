@@ -3,7 +3,7 @@
 //  Mail
 //
 //  Created by David Coninckx on 15.05.14.
-//  Copyright (c) 2014 Coninckx. All rights reserved.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

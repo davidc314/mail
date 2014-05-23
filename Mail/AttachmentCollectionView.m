@@ -3,7 +3,7 @@
 //  Mail
 //
 //  Created by David Coninckx on 15.05.14.
-//  Copyright (c) 2014 Coninckx. All rights reserved.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import "AttachmentCollectionView.h"
@@ -19,6 +19,7 @@
     return self;
 }
 
+/* Ecrit un "drop attachment here" au centre de la vue lorsqu'elle est vide */
 - (void)drawRect:(NSRect)dirtyRect
 {
 	[super drawRect:dirtyRect];
@@ -38,6 +39,8 @@
     
     // Drawing code here.
 }
+
+/* Touche delete ou backspace pressée pour supprimer un ou plusieurs éléments */
 - (void)keyDown:(NSEvent *)theEvent
 {
     if([[theEvent charactersIgnoringModifiers] characterAtIndex:0] == NSDeleteCharacter

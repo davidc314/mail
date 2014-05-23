@@ -2,8 +2,8 @@
 //  ACSearchFieldCell.m
 //  AppCleaner
 //
-//  Created by Informatique on 17.03.14.
-//  Copyright (c) 2014 Informatique. All rights reserved.
+//  Created by Coninckx David on 17.03.14.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import "SearchFieldCell.h"
@@ -12,6 +12,7 @@
     NSImage *searchImg;
 }
 
+/* Initialisation */
 - (id)init
 {
     self = [super init];
@@ -32,6 +33,7 @@
     return self;
 }
 
+/* Taille du rectange pour le text de recherche */
 - (NSRect)searchTextRectForBounds:(NSRect)rect
 {
     NSRect textRect = [super searchTextRectForBounds:rect];
@@ -40,6 +42,7 @@
     return textRect;
 }
 
+/* Taille du bouton pour la recherche */
 - (NSRect)searchButtonRectForBounds:(NSRect)rect
 {
     NSRect searchButtonRect = [super searchButtonRectForBounds:rect];
@@ -47,6 +50,7 @@
     return searchButtonRect;
 }
 
+/* Dessine le champ de recherche */
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
     NSBezierPath *cellPath = [NSBezierPath bezierPathWithRect:cellFrame];
@@ -71,7 +75,7 @@
     [self drawInteriorWithFrame:cellFrame inView:controlView];
 }
 
-
+/* Edition du contenu de la cellule */
 - (void)editWithFrame:(NSRect)aRect inView:(NSView *)controlView
                editor:(NSText *)textObj delegate:(id)anObject event:(NSEvent *)theEvent
 {
@@ -81,6 +85,7 @@
                    event:theEvent];
 }
 
+/* Sélection de la cellule */
 - (void)selectWithFrame:(NSRect)aRect inView:(NSView *)controlView
                  editor:(NSText *)textObj delegate:(id)anObject start:(NSInteger)selStart length:(NSInteger)selLength
 {

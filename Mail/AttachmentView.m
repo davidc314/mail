@@ -2,8 +2,8 @@
 //  AttachmentView.m
 //  attachmentsCollectionView
 //
-//  Created by Informatique on 17.03.14.
-//  Copyright (c) 2014 Informatique. All rights reserved.
+//  Created by Coninckx David on 17.03.14.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import "AttachmentView.h"
@@ -21,6 +21,7 @@
     return self;
 }
 
+/* Colore en bleu un élément selectionné */
 - (void)drawRect:(NSRect)dirtyRect
 {
 	[super drawRect:dirtyRect];
@@ -31,6 +32,8 @@
     }
 }
 
+
+/* Double clique gauche */
 -(void)mouseDown:(NSEvent *)theEvent
 {
     [super mouseDown:theEvent];
@@ -42,6 +45,8 @@
         }
     }
 }
+
+/* Clique droit */
 -(void) rightMouseDown:(NSEvent *)theEvent
 {
     if([self.delegate respondsToSelector:@selector(rightClicked:event:)]) {

@@ -19,6 +19,7 @@
     return self;
 }
 
+/* Colore le fond de l'entete des messages et ajoute une ligne horizontale en dessous */
 - (void)drawRect:(NSRect)dirtyRect
 {
     [[NSColor whiteColor] set];

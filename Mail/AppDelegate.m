@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  Mail
 //
-//  Created by Informatique on 27.01.14.
-//  Copyright (c) 2014 Informatique. All rights reserved.
+//  Created by Coninckx David on 27.01.14.
+//  Copyright (c) 2014 Coninckx David. All rights reserved.
 //
 
 #import "AppDelegate.h"
