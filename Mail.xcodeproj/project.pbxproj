@@ -72,8 +72,8 @@
 		736D491519263658001564C1 /* MailCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 732BB8231917631400328A4B /* MailCore.framework */; };
 		7374E1DA18E9400800741BE2 /* dateValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7374E1D918E9400800741BE2 /* dateValueTransformer.m */; };
 		7374E1E018E96E2600741BE2 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7374E1DF18E96E2600741BE2 /* bar.png */; };
-		7375F7D9190F849A0076BF69 /* opened_folder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7D8190F849A0076BF69 /* opened_folder.pdf */; };
-		7375F7DF190F8A4D0076BF69 /* save.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7DE190F8A4D0076BF69 /* save.pdf */; };
+		7375F7D9190F849A0076BF69 /* opened_folderTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7D8190F849A0076BF69 /* opened_folderTemplate.pdf */; };
+		7375F7DF190F8A4D0076BF69 /* saveTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7375F7DE190F8A4D0076BF69 /* saveTemplate.pdf */; };
 		7385081D192E30D000D31CE9 /* icon_64x64.png in Resources */ = {isa = PBXBuildFile; fileRef = 7385081C192E30D000D31CE9 /* icon_64x64.png */; };
 		7385081F192E312700D31CE9 /* icon_1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 7385081E192E312700D31CE9 /* icon_1024x1024.png */; };
 		7389B1401920C28200C84A5A /* UpperCaseValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7389B13F1920C28200C84A5A /* UpperCaseValueTransformer.m */; };
@@ -229,8 +229,8 @@
 		7374E1D818E9400800741BE2 /* dateValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dateValueTransformer.h; sourceTree = "<group>"; };
 		7374E1D918E9400800741BE2 /* dateValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dateValueTransformer.m; sourceTree = "<group>"; };
 		7374E1DF18E96E2600741BE2 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bar.png; path = Resources/bar.png; sourceTree = "<group>"; };
-		7375F7D8190F849A0076BF69 /* opened_folder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = opened_folder.pdf; path = Resources/opened_folder.pdf; sourceTree = "<group>"; };
-		7375F7DE190F8A4D0076BF69 /* save.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = save.pdf; path = Resources/save.pdf; sourceTree = "<group>"; };
+		7375F7D8190F849A0076BF69 /* opened_folderTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = opened_folderTemplate.pdf; path = Resources/opened_folderTemplate.pdf; sourceTree = "<group>"; };
+		7375F7DE190F8A4D0076BF69 /* saveTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = saveTemplate.pdf; path = Resources/saveTemplate.pdf; sourceTree = "<group>"; };
 		7385081C192E30D000D31CE9 /* icon_64x64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_64x64.png; path = Resources/logo/logo_new.iconset/icon_64x64.png; sourceTree = "<group>"; };
 		7385081E192E312700D31CE9 /* icon_1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_1024x1024.png; path = Resources/logo/logo_new.iconset/icon_1024x1024.png; sourceTree = "<group>"; };
 		7389B13E1920C28200C84A5A /* UpperCaseValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpperCaseValueTransformer.h; sourceTree = "<group>"; };
@@ -283,8 +283,8 @@
 				7313087618F570BC00243913 /* forwardTemplate.pdf */,
 				7313087818F570C300243913 /* replyTemplate.pdf */,
 				7313087A18F5782700243913 /* search.pdf */,
-				7375F7D8190F849A0076BF69 /* opened_folder.pdf */,
-				7375F7DE190F8A4D0076BF69 /* save.pdf */,
+				7375F7D8190F849A0076BF69 /* opened_folderTemplate.pdf */,
+				7375F7DE190F8A4D0076BF69 /* saveTemplate.pdf */,
 				73C40AE6190E5A760007C2BE /* new_logo_notif.pdf */,
 				63F90CB218A69083005295CF /* logo */,
 			);
@@ -644,7 +644,7 @@
 				7313086D18F51AA900243913 /* outbox.pdf in Resources */,
 				731812DD18F8246F008E6D44 /* icon_16x16.png in Resources */,
 				731812DF18F8246F008E6D44 /* icon_128x128.png in Resources */,
-				7375F7D9190F849A0076BF69 /* opened_folder.pdf in Resources */,
+				7375F7D9190F849A0076BF69 /* opened_folderTemplate.pdf in Resources */,
 				7313087B18F5782700243913 /* search.pdf in Resources */,
 				7374E1E018E96E2600741BE2 /* bar.png in Resources */,
 				731812E018F8246F008E6D44 /* icon_256x256.png in Resources */,
@@ -666,7 +666,7 @@
 				736094251896744D00E664B4 /* Credits.rtf in Resources */,
 				73BB96821913BC2C003EBEC7 /* reply_buttonTemplate.pdf in Resources */,
 				7313086F18F51AA900243913 /* starred.pdf in Resources */,
-				7375F7DF190F8A4D0076BF69 /* save.pdf in Resources */,
+				7375F7DF190F8A4D0076BF69 /* saveTemplate.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

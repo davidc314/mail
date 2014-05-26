@@ -20,7 +20,7 @@
 /** Nombre de message non-lu pour tout les comptes du gestionnaire */
 @property (assign, nonatomic) NSUInteger nbUnread;
 
-/** Méthode par defaut du Pattern Singleton 
+/** Méthode par défaut du Pattern Singleton 
  @return L'instance unique de la classe AccountManager
  */
 + (id)sharedManager;

@@ -21,19 +21,16 @@
 /** La vue contenant la liste des messages */
 @property (weak) IBOutlet NSTableView *inboxTable;
 
-/** Le menu de la barre de status */
-@property (weak) IBOutlet NSMenu *statusMenu;
-
 /** Vue en arbre des comptes et des dossier configurés */
 @property (weak) IBOutlet NSOutlineView *outlineView;
 
-/** Barre de recherche pour filtrer les messages dans le dossier sélectioner  */
+/** Barre de recherche pour filtrer les messages dans le dossier sélectioné  */
 @property (weak) IBOutlet SearchField *search;
 
-/** Le controlleur du tableau de messages */
+/** Le contrôleur du tableau de messages */
 @property (weak) IBOutlet NSArrayController *arrayController;
 
-/** Le controlleur d'arborescence des comptes et des dossiers */
+/** Le contrôleur d'arborescence des comptes et des dossiers */
 @property (weak) IBOutlet NSTreeController *treeController;
 
 /** Les trieurs pour les messages */

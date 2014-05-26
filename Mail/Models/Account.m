@@ -186,13 +186,15 @@
             
             
             Folder *folder = [[Folder alloc]initWithName:fetchedFolder.path flags:fetchedFolder.flags];
-
+            
+            /* Dossiers racine */
             if (pathComponents.count == 1) {
                 [folders addObject:folder];
                 folder.label = [pathComponents lastObject];
                 [folder fetchMessagesHeadersForAccount:self];
             }
             
+            /* Sous-dossiers */
             else if (pathComponents.count > 0) {
                 
                 NSMutableArray *lastFolders = folders;
@@ -239,7 +241,8 @@
         
         NSUInteger index = 10;
         
-        if ([folder.path isEqualToString:@"INBOX"]) {index = 0;} // Inbox
+        /* Fixe l'index */
+        if ([folder.path isEqualToString:@"INBOX"]) {index = 0;} /* Inbox */
         else if ([folder.path isEqualToString:self.provider.sentMailFolderPath] || (folder.flags & MCOIMAPFolderFlagSentMail)) {index = 1;} /* Sent */
         else if ([folder.path isEqualToString:self.provider.draftsFolderPath] || (folder.flags & MCOIMAPFolderFlagDrafts)) {index = 2;} /* Drafts */
         else if ([folder.path isEqualToString:self.provider.importantFolderPath] || (folder.flags & MCOIMAPFolderFlagImportant)) {index = 3;} /* Important */
@@ -248,6 +251,8 @@
         else if ([folder.path isEqualToString:self.provider.spamFolderPath] || (folder.flags & MCOIMAPFolderFlagSpam)) {index = 6;} /* Spam */
         else if ([folder.path isEqualToString:self.provider.allMailFolderPath] || (folder.flags & MCOIMAPFolderFlagAllMail)) {index = 7;} /* All Mail */
         
+        
+        /* Fixe le label */
         if (index <= folderOrder.count) {
             folder.label = folderOrder[index];
         }

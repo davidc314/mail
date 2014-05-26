@@ -22,10 +22,10 @@
 /** Taille du fichier */
 @property (assign) UInt64 size;
 
-/** Icone correspondant au fichier */
+/** Icône correspondant au fichier */
 @property (assign) NSImage *icon;
 
-/** Donnée du fichier */
+/** Données du fichier */
 @property (strong) NSData *data;
 
 /** Initialise une pièce jointe

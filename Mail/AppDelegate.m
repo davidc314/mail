@@ -205,7 +205,21 @@
     }
     
     self.accountsManager.nbUnread = count;
+    
     [status setTitle:[NSString stringWithFormat:@"%lu",count]];
+}
+
+/* Réouverture de l'application */
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag
+{
+    if ( flag ) {
+        [self.window orderFront:self];
+    }
+    else {
+        [self.window makeKeyAndOrderFront:self];
+    }
+    
+    return YES;
 }
 
 @end

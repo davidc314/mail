@@ -210,14 +210,14 @@
         </collectionViewItem>
         <menu id="Ebb-zE-Fi7">
             <items>
-                <menuItem title="Open" image="opened_folder" id="9PT-M9-QLB">
+                <menuItem title="Open" image="opened_folderTemplate" id="9PT-M9-QLB">
                     <attributedString key="attributedTitle"/>
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="openAttachment:" target="-2" id="X1J-gU-zls"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Save" image="save" id="Sc9-ge-nzm">
+                <menuItem title="Save" image="saveTemplate" id="Sc9-ge-nzm">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="saveAttachment:" target="-2" id="N7M-RW-3FS"/>
@@ -287,21 +287,13 @@
                 <outlet property="menu" destination="Ebb-zE-Fi7" id="ofX-l8-woh"/>
             </connections>
         </customView>
-        <button verticalHuggingPriority="750" id="DyD-Cs-3cn">
-            <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VMz-lm-3do">
-                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                <font key="font" metaFont="system"/>
-            </buttonCell>
-        </button>
     </objects>
     <resources>
         <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="deleteTemplate" width="16" height="16"/>
         <image name="forward_buttonTemplate" width="16" height="16"/>
-        <image name="opened_folder" width="20" height="15"/>
+        <image name="opened_folderTemplate" width="20" height="15"/>
         <image name="reply_buttonTemplate" width="16" height="16"/>
-        <image name="save" width="20" height="15"/>
+        <image name="saveTemplate" width="20" height="15"/>
     </resources>
 </document>

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** Transforme une date au format désiré */
 @interface DateValueTransformer : NSValueTransformer
 
 @end

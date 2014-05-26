@@ -86,24 +86,21 @@
         }
         [self.sendingProgressIndicator setHidden:YES];
         [self.sendingProgressIndicator stopAnimation:self];
-        
     }];
-    
-    /* Fermeture de la fenêtre */
-    //[self.window close];
 }
 
 /* Envoie de la notification */
 - (void) sendNotification:(NSString *)message
 {
     NSUserNotification *notification = [[NSUserNotification alloc] init];
+    NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
+    
     [notification setTitle:message];
     [notification setSubtitle:self.subject.stringValue];
     [notification setSoundName:NSUserNotificationDefaultSoundName];
     [notification setHasActionButton:NO];
     [notification setDeliveryDate:[NSDate dateWithTimeInterval:0.1 sinceDate:[NSDate date]]];
     
-    NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
     [center setDelegate:self];
     [center deliverNotification:notification];
     [center scheduleNotification:notification];
