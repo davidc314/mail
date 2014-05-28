@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-/** Controller de l'interface de paramétrage des comptes */
+/** Contrôleur de l'interface de paramétrage des comptes */
 @interface Settings : NSWindowController <NSTextViewDelegate, NSWindowDelegate>
 
 /** Vue listant les comptes dejà configuré */
@@ -16,7 +16,7 @@
 
 @property (strong) IBOutlet NSArrayController *arrayController;
 
-/** Type de connection utilisé pour un compte */
+/** Type de connexion utilisé pour un compte */
 @property (strong) NSArray *connectionType;
 
 /** Vue des paramètres pour un compte selectionné */

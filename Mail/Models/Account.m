@@ -182,6 +182,8 @@
         
         for (MCOIMAPFolder *fetchedFolder in fetchedFolders) {
             NSMutableArray *pathComponents = [[fetchedFolder.path componentsSeparatedByString:[NSString stringWithFormat:@"%c" , fetchedFolder.delimiter]] mutableCopy];
+            
+            /* Dossier custom Gmail*/
             [pathComponents removeObject:@"[Gmail]"];
             
             
@@ -215,8 +217,11 @@
         }
         
         self.folders = folders;
+        
+        /* Appelle fonction de tri et d'uniformisation */
         [self setFoldersLabelsAndIndexes];
         self.folders = self.folders;
+        
         [self registerAsObserver];
         
     }];

@@ -59,7 +59,6 @@
 		736094151896744D00E664B4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736094141896744D00E664B4 /* Cocoa.framework */; };
 		7360941F1896744D00E664B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7360941D1896744D00E664B4 /* InfoPlist.strings */; };
 		736094211896744D00E664B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 736094201896744D00E664B4 /* main.m */; };
-		736094251896744D00E664B4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 736094231896744D00E664B4 /* Credits.rtf */; };
 		736094281896744D00E664B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 736094271896744D00E664B4 /* AppDelegate.m */; };
 		7360942D1896744D00E664B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7360942C1896744D00E664B4 /* Images.xcassets */; };
 		736094341896744D00E664B4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736094331896744D00E664B4 /* XCTest.framework */; };
@@ -212,7 +211,6 @@
 		7360941E1896744D00E664B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		736094201896744D00E664B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		736094221896744D00E664B4 /* Mail-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mail-Prefix.pch"; sourceTree = "<group>"; };
-		736094241896744D00E664B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		736094261896744D00E664B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		736094271896744D00E664B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7360942C1896744D00E664B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -452,7 +450,6 @@
 				7360941D1896744D00E664B4 /* InfoPlist.strings */,
 				736094201896744D00E664B4 /* main.m */,
 				736094221896744D00E664B4 /* Mail-Prefix.pch */,
-				736094231896744D00E664B4 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -663,7 +660,6 @@
 				73BB96841913BF8C003EBEC7 /* deleteTemplate.pdf in Resources */,
 				7313086E18F51AA900243913 /* spam.pdf in Resources */,
 				7313087018F51AA900243913 /* trash.pdf in Resources */,
-				736094251896744D00E664B4 /* Credits.rtf in Resources */,
 				73BB96821913BC2C003EBEC7 /* reply_buttonTemplate.pdf in Resources */,
 				7313086F18F51AA900243913 /* starred.pdf in Resources */,
 				7375F7DF190F8A4D0076BF69 /* saveTemplate.pdf in Resources */,
@@ -692,7 +688,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"ETML\";\ncompanyID=\"ch.ETML\";\ncompanyURL=\"http://etml.ch\";\ntarget=\"macosx\";\noutputPath=\"/Volumes/PATRIOT/XCode/TPI/Documentation/AppleDoc\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"ETML\";\ncompanyID=\"ch.ETML\";\ncompanyURL=\"http://etml.ch\";\ntarget=\"macosx\";\noutputPath=\"./AppleDoc\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -755,14 +751,6 @@
 				7360941E1896744D00E664B4 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		736094231896744D00E664B4 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				736094241896744D00E664B4 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		7360943B1896744D00E664B4 /* InfoPlist.strings */ = {
